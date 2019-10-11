@@ -5,12 +5,12 @@
   @include clearfix;
 
   &__name {
-    font-size: 9rem;
+    font-size: 10rem;
     display: block;
     position: absolute;
     perspective: 150rem;
     backface-visibility: hidden;
-    animation: .8s linear .3s backwards;
+    animation: 0.8s linear 0.3s backwards;
 
     &--left {
       font-family: "BigJohn";
@@ -19,14 +19,15 @@
       right: 50%;
       transform-origin: 100% 50%;
       transform: translateY(-100%);
-      animation-name: rotate-in-from-right ;
+      animation-name: rotate-in-from-right;
     }
 
     &--right {
       font-family: "SlimJoe";
       color: $color-secondary;
       background-color: $color-primary;
-      left: 50%;
+      //THis is a fix because there is a 1px gap, sometimes, between the element and the true middle of the view
+      left: calc(50% - 1px);
       transform-origin: 0% 50%;
       animation-name: rotate-in-from-left;
     }
