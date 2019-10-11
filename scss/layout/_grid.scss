@@ -1,0 +1,23 @@
+.row {
+  max-width: 90vw;
+  margin: 0 auto;
+
+  @include clearfix;
+
+  &:not(:last-of-type) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  [class^="col-"] {
+    float: left;
+    &:not(:last-of-type) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: grid-size(#{$i});
+    }
+  }
+}
