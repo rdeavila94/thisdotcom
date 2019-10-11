@@ -1,0 +1,7 @@
+.header {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    background-image: linear-gradient(to right, $color-primary 0%, $color-primary 50%, $color-secondary 50%);
+}
