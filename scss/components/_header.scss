@@ -5,7 +5,7 @@
   @include clearfix;
 
   &__name {
-    font-size: 10rem;
+    font-size: $header-font-size;
     display: block;
     position: absolute;
     perspective: 150rem;
@@ -30,6 +30,30 @@
       left: calc(50% - 1px);
       transform-origin: 0% 50%;
       animation-name: rotate-in-from-left;
+    }
+  }
+
+  $this: &;
+  &__title {
+    position: absolute;
+    right: 50%;
+    transform: translateY(25rem) translateX(50%);
+
+    #{$this}__career {
+      position: absolute;
+      font-size: calc(#{$header-font-size}*.7);
+      &--left {
+        transform: translateX(-100%);
+        padding-right: 1rem;
+        font-family: 'SlimJoe';
+        color: $color-secondary;
+      }
+
+      &--right {
+        padding-left: 1rem;
+        font-family: 'BigJohn';
+        color: $color-primary;
+      }
     }
   }
 }
