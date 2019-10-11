@@ -38,6 +38,7 @@
     position: absolute;
     right: 50%;
     transform: translateY(25rem) translateX(50%);
+    animation: drop-down .5s backwards linear 1.1s;
 
     #{$this}__career {
       position: absolute;
