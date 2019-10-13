@@ -1,0 +1,10 @@
+.header-primary {
+    font-family: Aleo;
+    font-size: 6rem;
+    color: transparent;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+}
