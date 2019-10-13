@@ -1,0 +1,37 @@
+.bio {
+  background-color: $color-secondary-light;
+  min-height: 33vh;
+  font-family: Aleo;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+  position: relative;
+  margin: 0rem 6rem;
+
+  &__paragraph {
+    font-size: 2rem;
+    line-height: 200%;
+  }
+
+  &__img {
+    float: right;
+    margin-right: -1rem;
+    margin-top: -1rem;
+    img {
+      height: 16rem;
+      width: 16rem;
+      shape-outside: content-box;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, rgba($color-primary, 0.9), rgba($color-primary-dark, 0.9));
+    font-size: 4rem;
+    color: $color-white;
+    border-radius: 0.5rem;
+    padding: 1rem 4rem;
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+  }
+}
