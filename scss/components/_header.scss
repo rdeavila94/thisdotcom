@@ -15,7 +15,7 @@
     &--left {
       font-family: "BigJohn";
       color: $color-primary;
-      background-color: $color-secondary;
+      background-color: $color-white;
       right: 50%;
       transform-origin: 100% 50%;
       transform: translateY(-100%);
@@ -24,7 +24,7 @@
 
     &--right {
       font-family: "SlimJoe";
-      color: $color-secondary;
+      color: $color-white;
       background-color: $color-primary;
       //THis is a fix because there is a 1px gap, sometimes, between the element and the true middle of the view
       left: calc(50% - 1px);
@@ -47,7 +47,7 @@
         transform: translateX(-100%);
         padding-right: 1rem;
         font-family: 'SlimJoe';
-        color: $color-secondary;
+        color: $color-white;
       }
 
       &--right {
