@@ -5,7 +5,8 @@
   border-radius: 1rem;
   padding: 1rem 1rem;
   position: relative;
-  margin: 0rem 6rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
 
   &__paragraph {
     font-size: 2rem;
@@ -31,7 +32,7 @@
     font-size: 4rem;
     color: $color-white;
     border-radius: 0.5rem;
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
     transform: translate(-50%, -50%) rotateZ(-45deg);
   }
 }
