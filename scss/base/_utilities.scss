@@ -28,3 +28,10 @@
 .u-mt-big {
     margin-top: 6rem;
 }
+
+.u-line {
+  width: 90%;
+  height: 1px;
+  background-image: radial-gradient(rgba($color-primary-dark, .3), rgba($color-primary-light, .3));
+  margin: 0 auto;
+}
