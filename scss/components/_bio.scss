@@ -20,12 +20,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-image: linear-gradient(to top right, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.7));
+    background-image: linear-gradient(to top right, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.6));
     font-size: 4rem;
     color: $color-white;
     border-radius: 0.5rem;
     padding: 1rem 2rem;
-    transform: translate(50%, -50%) rotateZ(20deg);
+    transform: translate(40%, -50%) rotateZ(20deg);
     box-shadow: 0rem 0rem 3rem rgba($color-black, 0.5);
   }
 }
