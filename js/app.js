@@ -63,6 +63,6 @@ elements.forEach(element => element.addEventListener('click', event => {
     const p = document.createElement('p');
     p.className = 'composition__terminal__text';
     p.id = 'terminal-text';
-    terminalParent.insertBefore(p, terminalAppear);
+    terminalParent.appendChild(p);
     writeText(altMap[event.srcElement.alt], p);
 }));

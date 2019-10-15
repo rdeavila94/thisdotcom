@@ -27,7 +27,7 @@
 
     &--2 {
       top: 13.5rem;
-      left:  20%;
+      left: 20%;
       z-index: 1;
     }
 
@@ -59,18 +59,24 @@
   }
 
   &__terminal {
-
     top: 50rem;
     width: 100%;
     position: absolute;
     font-size: 1.5rem;
     font-family: Aleo;
-    background-color: $color-secondary;
+    background-color: $color-secondary-light;
     padding: 1rem;
     border-radius: 1rem;
+    color: $color-primary-light;
 
     &__left {
-      display: inline-block;
+      display: inline;
+      font-weight: bold;
+      &::after {
+        display: inline;
+        font-weight: bold;
+        color: rgba($color-primary-dark, 0.7);
+      }
     }
 
     &__right {
@@ -78,7 +84,19 @@
     }
 
     &__text {
-      display: inline;
+      display: block;
     }
+  }
+
+  &__image--1:hover ~ &__terminal > &__terminal__left::after {
+    content: ' "csulb"';
+  }
+
+  &__image--2:hover ~ &__terminal > &__terminal__left::after {
+    content: ' "los angeles"';
+  }
+
+  &__image--3:hover ~ &__terminal > &__terminal__left::after {
+    content: ' "mayan"';
   }
 }
