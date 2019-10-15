@@ -8,7 +8,7 @@
   position: relative;
   margin-left: 6rem;
   margin-right: 6rem;
-  box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
+  box-shadow: 0 1rem 3rem rgba($color-black, 0.3) inset;
 
   &__paragraph {
     font-size: 2rem;

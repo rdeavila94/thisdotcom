@@ -22,11 +22,11 @@
 }
 
 .u-mt {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .u-mt-big {
-    margin-top: 6rem;
+  margin-top: 6rem;
 }
 
 .u-mt-xl {
@@ -36,6 +36,6 @@
 .u-line {
   width: 90%;
   height: 1px;
-  background-image: radial-gradient(rgba($color-primary-dark, .3), rgba($color-primary-light, .3));
+  background-image: radial-gradient(rgba($color-primary-dark, 0.3), rgba($color-primary-light, 0.3));
   margin: 0 auto;
 }
