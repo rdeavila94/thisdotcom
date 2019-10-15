@@ -28,8 +28,8 @@ const elements = document.querySelectorAll('.composition__image img');
 
 
 const altMap = {
-    "csulb": "My alma mater: beautiful Long Beach State. Where I wrote my first 'Hello, World!'",
-    "la": "The city of Angeles. Glamorous and fruitbearing yet not for the faint of heart. ",
+    "csulb": "My alma mater: beautiful Long Beach State. Where I wrote my first (but certainly not last) 'Hello, World!'",
+    "la": "The city of Angeles. Glamorous. Fruitful. Challenging. The skyline whose shadow I was raised under. Not for the faint of heart but rewarding to those who conquer it.",
     "mayan": "The Mayan nightclub. Want to find on a Saturday night? Meet me at the dance floor."
 }
 
