@@ -43,3 +43,7 @@
   background-image: radial-gradient(rgba($color-primary-dark, 0.3), rgba($color-primary-light, 0.3));
   margin: 0 auto;
 }
+
+.appear {
+  animation: appear .9s infinite linear;
+}
