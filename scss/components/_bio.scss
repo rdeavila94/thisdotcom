@@ -7,6 +7,7 @@
     font-size: 2rem;
     line-height: 200%;
     display: inline;
+    color: $color-secondary-dark;
   }
 
   &__img {
@@ -20,7 +21,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-image: linear-gradient(to top right, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.6));
+    background-image: linear-gradient(to top right, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8));
     font-size: 4rem;
     color: $color-white;
     border-radius: 0.5rem;

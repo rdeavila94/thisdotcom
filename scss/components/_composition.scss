@@ -67,7 +67,7 @@
     background-color: $color-secondary-light;
     padding: 1rem;
     border-radius: 1rem;
-    color: $color-primary-light;
+    color: $color-primary-dark;
 
     &__left {
       display: inline;
@@ -75,7 +75,7 @@
       &::after {
         display: inline;
         font-weight: bold;
-        color: rgba($color-primary-dark, 0.7);
+        color: rgba($color-primary, 0.7);
       }
     }
 
@@ -89,14 +89,14 @@
   }
 
   &__image--1:hover ~ &__terminal > &__terminal__left::after {
-    content: ' "csulb"';
+    content: ' csulb';
   }
 
   &__image--2:hover ~ &__terminal > &__terminal__left::after {
-    content: ' "los angeles"';
+    content: ' los_angeles';
   }
 
   &__image--3:hover ~ &__terminal > &__terminal__left::after {
-    content: ' "mayan"';
+    content: ' mayan';
   }
 }
