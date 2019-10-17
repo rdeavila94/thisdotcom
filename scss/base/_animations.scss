@@ -69,3 +69,13 @@
     opacity: 1;
   }
 }
+
+@keyframes expand-right {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}

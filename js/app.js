@@ -24,17 +24,12 @@ const elements = document.querySelectorAll('.composition__image img')
 
 const sectionAbout = document.querySelector('.section-about')
 
+const img = document.querySelector('.composition__image')
+
 const altMap = {
   csulb: 'My alma mater: beautiful Long Beach State. Where I wrote my first (but certainly not last) "Hello, World!"',
   la: 'The city of Angeles. Glamorous. Fruitful. Challenging. The skyline whose shadow I was raised under. Not for the faint of heart but rewarding to those who conquer it.',
   mayan: 'The Mayan nightclub. Want to find on a Saturday night? Meet me on the dance floor.'
-}
-
-const rewriteText = alt => {
-  if (terminalText.textContent) {
-    removeText(() => writeText(altMap[alt]))
-  }
-  writeText(altMap[alt])
 }
 
 const writeText = (message, terminal) => {
@@ -43,16 +38,6 @@ const writeText = (message, terminal) => {
       terminal.textContent = terminal.textContent + message.charAt(i)
     }, writeSpeed * i)
   }
-}
-
-const removeText = (callback) => {
-  const textLength = terminalText.textContent.length
-  for (let i = 0; i <= textLength; i++) {
-    setTimeout(() => {
-      terminalText.textContent = terminalText.textContent.slice(0, textLength - i)
-    }, writeSpeed * i)
-  }
-  setTimeout(callback, writeSpeed * (textLength + 1))
 }
 
 elements.forEach(element => element.addEventListener('click', event => {
@@ -65,11 +50,11 @@ elements.forEach(element => element.addEventListener('click', event => {
 }))
 
 // remove this event listener once they've scrolled all the way down
-document.addEventListener('scroll', e => {
-  const windowHeight = window.innerHeight
-  const windowDistance = window.pageYOffset
+// document.addEventListener('scroll', e => {
+//   const windowHeight = window.innerHeight
+//   const windowDistance = window.pageYOffset
 
-  if (sectionAbout.offsetHeight > windowHeight - windowDistance) {
-    sectionAbout.className = 'section-about fade-in'
-  }
-})
+//   if (sectionAbout.offsetHeight > windowHeight - windowDistance + 200) {
+//     sectionAbout.className = 'section-about fade-in'
+//   }
+// })

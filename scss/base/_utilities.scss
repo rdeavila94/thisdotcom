@@ -39,9 +39,13 @@
 
 .u-line {
   height: 6px;
-  background-image: radial-gradient(rgba($color-primary-dark, .8), rgba($color-primary-light, .1));
-  clip-path: polygon(0 0, 100% 0, 90% 60%, 100% 100%, 0 100%, 10% 40%, 0 0);
+  background-image: linear-gradient(to right, rgba($color-primary-dark, .6), rgba($color-primary-light, .6));
   margin: 0 auto;
+  border-radius: 1rem;
+
+  &--animated {
+    animation: expand-right .5s cubic-bezier(.6,.6,.67,.03) backwards .1s;
+  }
 }
 
 .u-inline-block {
