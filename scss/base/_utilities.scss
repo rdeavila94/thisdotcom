@@ -50,3 +50,11 @@
 .appear {
   animation: appear .9s infinite linear;
 }
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 1s linear;
+}
