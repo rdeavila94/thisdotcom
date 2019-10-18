@@ -4,7 +4,7 @@
   position: relative;
 
   &__paragraph {
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 200%;
     display: inline;
     color: $color-secondary-dark;
@@ -15,18 +15,29 @@
     width: 20rem;
     shape-outside: content-box;
     margin-left: -5rem;
+    margin-top: 7rem;
   }
 
   &__tag {
     position: absolute;
-    top: 0;
-    right: 0;
-    background-image: linear-gradient(to top right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+    top: -2rem;
     font-size: 4rem;
     color: $color-white;
     border-radius: 0.5rem;
     padding: 1rem 2rem;
-    transform: translate(40%, -50%) rotateZ(20deg);
     box-shadow: 0rem 0rem 3rem rgba($color-black, 0.5);
+    z-index: 3;
+
+    &--left {
+      left: 0;
+      transform: translate(-4vw, -50%) rotateZ(-25deg);
+      background-image: linear-gradient(to top right, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.8));
+    }
+
+    &--right {
+      right: 0;
+      transform: translate(calc(#{$gutter-horizontal/2}), -50%) rotateZ(25deg);
+      background-image: linear-gradient(to top left, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.8));
+    }
   }
 }
