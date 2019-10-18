@@ -1,5 +1,5 @@
 .row {
-  max-width: 90vw;
+  max-width: $row-width;
   margin: 0 auto;
 
   @include clearfix;
