@@ -39,12 +39,12 @@
 
 .u-line {
   height: 6px;
-  background-image: linear-gradient(to right, rgba($color-primary-dark, .6), rgba($color-primary-light, .6));
+  background-image: linear-gradient(to right, rgba($color-primary-dark, 0.6), rgba($color-primary-light, 0.6));
   margin: 0 auto;
   border-radius: 1rem;
 
   &--animated {
-    animation: expand-right .5s cubic-bezier(.6,.6,.67,.03) backwards .1s;
+    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards 0.1s;
   }
 }
 
@@ -52,7 +52,7 @@
   display: inline-block;
 }
 .appear {
-  animation: appear .9s infinite linear;
+  animation: appear 0.9s infinite linear;
 }
 
 .hidden {
