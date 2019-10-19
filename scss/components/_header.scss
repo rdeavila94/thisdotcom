@@ -5,7 +5,7 @@
   @include clearfix;
 
   &__name {
-    font-size: $header-font-size;
+    font-size: $header-font-size * 1rem;
     display: block;
     position: absolute;
     perspective: 150rem;
@@ -32,29 +32,30 @@
       animation-name: rotate-in-from-left;
     }
   }
+}
 
-  $this: &;
-  &__title {
+.subheader {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+  animation: drop-down 0.5s backwards linear 1.1s;
+
+  &__career {
     position: absolute;
-    right: 50%;
-    transform: translateY(25rem) translateX(50%);
-    animation: drop-down .5s backwards linear 1.1s;
+    font-size: calc(#{$header-font-size}* 0.7rem);
+    top: calc(#{$header-font-size} * -2.1vh);
+    &--left {
+      transform: translateX(-100%);
+      padding-right: 1rem;
+      font-family: "SlimJoe";
+      color: $color-white;
+    }
 
-    #{$this}__career {
-      position: absolute;
-      font-size: calc(#{$header-font-size}*.7);
-      &--left {
-        transform: translateX(-100%);
-        padding-right: 1rem;
-        font-family: 'SlimJoe';
-        color: $color-white;
-      }
-
-      &--right {
-        padding-left: 1rem;
-        font-family: 'BigJohn';
-        color: $color-primary;
-      }
+    &--right {
+      padding-left: 1rem;
+      font-family: "BigJohn";
+      color: $color-primary;
     }
   }
 }
