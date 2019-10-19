@@ -1,0 +1,25 @@
+.btn {
+  padding: 1rem 3rem;
+  font-family: $primary-font;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  letter-spacing: .2rem;
+
+  &--primary {
+    background-color: $color-black;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+
+  &--large {
+      font-size: 3rem;
+      letter-spacing: .3rem;
+  }
+}
