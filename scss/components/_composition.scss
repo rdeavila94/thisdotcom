@@ -17,12 +17,28 @@
     }
   }
 
+  &__image:hover &__descr {
+    bottom: 0;
+  }
+
+  &__descr {
+    position: absolute;
+    bottom: -100%;
+    background-color: rgba($color-primary, 0.7);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+    font-family: $primary-font;
+    transition: all 0.2s;
+    letter-spacing: .1rem;
+  }
+
   @for $i from 1 through length($images) {
     $image: nth($images, $i);
 
     &:hover &__image--#{$i}:not(:hover) {
       transform: scale(0.95);
-      background-image: url($image), radial-gradient($color-secondary-dark, $color-secondary-light);
+      background-image: url($image), radial-gradient($color-secondary, $color-secondary-light);
     }
 
     &__image--#{$i} {
