@@ -3,37 +3,47 @@
 
   &__image {
     position: absolute;
-    width: 35rem;
-
+    width: 36rem;
+    height: 24rem;
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 5rem rgba($color-black, 0.6);
     transition: all 0.2s;
+    overflow: hidden;
+    background-blend-mode: luminosity;
 
     &:hover {
       transform: scale(1.05);
       z-index: 2;
-      outline: 1rem solid $color-primary;
-      outline-offset: 1rem;
+    }
+  }
+
+  @for $i from 1 through length($images) {
+    $image: nth($images, $i);
+
+    &:hover &__image--#{$i}:not(:hover) {
+      transform: scale(0.95);
+      background-image: url($image), radial-gradient($color-secondary-dark, $color-secondary-light);
     }
 
-    img {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 1rem 1rem 5rem rgba($color-black, 0.6);
-    }
+    &__image--#{$i} {
+      @if $i==1 {
+        top: 3.5rem;
+        left: 10rem;
+      }
 
-    &--1 {
-      top: 3.5rem;
-      left: 10rem;
-    }
+      @if $i==2 {
+        top: 20rem;
+        left: 20rem;
+        z-index: 1;
+      }
 
-    &--2 {
-      top: 20rem;
-      left: 20rem;
-      z-index: 1;
-    }
+      @if $i==3 {
+        top: 9rem;
+        right: 10rem;
+      }
 
-    &--3 {
-      top: 9rem;
-      right: 10rem;
+      background-image: url($image);
+      background-size: contain;
     }
   }
 
@@ -52,10 +62,6 @@
     &--left {
       left: -1rem;
     }
-  }
-
-  &:hover &__image:not(:hover) {
-    transform: scale(0.95);
   }
 
   &__terminal {
@@ -89,14 +95,14 @@
   }
 
   &__image--1:hover ~ &__terminal > &__terminal__left::after {
-    content: ' csulb';
+    content: " csulb";
   }
 
   &__image--2:hover ~ &__terminal > &__terminal__left::after {
-    content: ' los_angeles';
+    content: " los_angeles";
   }
 
   &__image--3:hover ~ &__terminal > &__terminal__left::after {
-    content: ' mayan';
+    content: " mayan";
   }
 }
