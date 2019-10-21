@@ -44,7 +44,7 @@
   border-radius: 1rem;
 
   &--animated {
-    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards 0.1s;
+    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards 0.5s;
   }
 }
 
@@ -60,5 +60,5 @@
 }
 
 .fade-in {
-  animation: fade-in 1s linear;
+  animation: fade-in .5s linear;
 }
