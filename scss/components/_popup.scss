@@ -15,17 +15,22 @@
     opacity: 1;
   }
 
+  &:target &__box {
+    transform: translate(-50%, -50%);
+  }
+
   &__box {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(100%, -50%);
     width: 100rem;
     height: 45rem;
     background-color: $color-secondary-light;
     border-radius: 1rem;
     box-shadow: 0 0 3rem rgba($color-black, 0.8);
     overflow: hidden;
+    transition: all .2s;
   }
 
   &__content {
