@@ -69,9 +69,6 @@
 .u-inline-block {
   display: inline-block;
 }
-.appear {
-  animation: appear 0.9s infinite linear;
-}
 
 .hidden {
   opacity: 0;
@@ -79,4 +76,12 @@
 
 .fade-in {
   animation: fade-in $fade-in-animation-delay linear;
+}
+
+.u-hide-overflow {
+  overflow: hidden;
+}
+
+.pop-up {
+  animation: pop-up .5s $fade-in-animation-delay linear backwards;
 }

@@ -62,7 +62,7 @@
 
 @keyframes fade-in {
   0%{
-    transform: scale(.98);
+    transform: scale(.99);
     opacity: 0;
   }
 
@@ -94,5 +94,15 @@
 
   100% {
     width: 25%;
+  }
+}
+
+@keyframes pop-up {
+  from {
+    transform: translateY(100%);
+  }
+
+  to{ 
+    transform: translateY(0);
   }
 }

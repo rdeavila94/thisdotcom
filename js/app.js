@@ -1,10 +1,10 @@
 // Constructors for objects to facilitate animations nested within a fade in section
-function AnimatedParent (element, animatedChildren) {
+function AnimatedParent(element, animatedChildren) {
   this.element = element
   this.animatedChildren = animatedChildren
 }
 
-function AnimatedChild (element, animationName) {
+function AnimatedChild(element, animationName) {
   this.element = element
   this.animationName = ' ' + animationName
 }
@@ -26,7 +26,8 @@ const sectionAbout = new AnimatedParent(document.querySelector('#section-about')
 const typeAnimate = document.querySelector('#type-animate')
 
 const animatedHr = new AnimatedChild(document.querySelector('#animated-hr'), 'u-line-slice--animated')
-const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr])
+const popupHeader = new AnimatedChild(document.querySelector('#popup-header'), 'pop-up')
+const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr, popupHeader])
 
 // Function to create a 'typing' animation
 const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
@@ -37,8 +38,8 @@ const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
   }
 }
 
-// remove this event listener once they've scrolled all the way down
-document.addEventListener('scroll', e => {
+// We have to use a named function in order to have the ability to remove the handler
+const onscroll = e => {
   const windowHeight = window.innerHeight
   const windowDistance = window.pageYOffset
 
@@ -58,4 +59,10 @@ document.addEventListener('scroll', e => {
     setTimeout(() => writeText('Java + Node'), fadeInAnimationDelay * 2)
     technicalTriggered = true
   }
-})
+
+  if (aboutTriggered && technicalTriggered) {
+    document.removeEventListener('scroll', onscroll)
+  }
+}
+// remove this event listener once they've scrolled all the way down
+document.addEventListener('scroll', onscroll)
