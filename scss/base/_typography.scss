@@ -1,33 +1,49 @@
 .header-primary {
-  font-family: Aleo;
+  font-family: $primary-font;
   font-size: 6.5rem;
-  color: transparent;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
+  letter-spacing: 0.2rem;
   display: inline-block;
 
   &--primary {
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
   }
 
   &--secondary {
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
     background-image: linear-gradient(to right, $color-secondary, $color-secondary-dark);
+  }
+
+  &--white {
+    color: $color-white;
   }
 }
 
+.header-secondary {
+  font-family: $primary-font;
+  font-size: 5rem;
+  color: $color-secondary;
+  letter-spacing: 0.1rem;
+}
+
 .blinking-text {
-    animation: appear .9s linear infinite;
+  animation: appear 0.9s linear infinite;
 }
 
 .link {
   position: relative;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   color: inherit;
   text-decoration: none;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -35,7 +51,7 @@
     clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
     width: 100%;
     height: 100%;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   &:hover {
