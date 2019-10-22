@@ -56,6 +56,10 @@
   margin-right: auto;
   margin-left: auto;
   width: 25%;
+
+  &--animated {
+    animation: expand .5s linear $fade-in-animation-delay backwards;
+  }
 }
 
 .u-color-primary {
