@@ -62,12 +62,12 @@
 
 @keyframes fade-in {
   0%{
-    margin-top: -1rem;
+    transform: scale(.98);
     opacity: 0;
   }
 
   100% {
-    margin-top: 0;
+    transform: scale(1);
     opacity: 1;
   }
 }
