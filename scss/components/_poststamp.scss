@@ -8,19 +8,24 @@
   position: relative;
   overflow: hidden;
   transition: all 0.5s;
-  padding: 1rem;
 
   &__left {
-    width: 70%;
+    width: 65%;
     height: 100%;
     float: left;
     padding: 1rem;
   }
 
   &__right {
-    width: 29%;
+    width: 34%;
     height: 100%;
     float: right;
+    background-image: url('../img/code.jpg'), radial-gradient($color-secondary, $color-secondary);
+    background-blend-mode: overlay;
+    background-position: left;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    box-shadow: 0 0 1rem rgba($color-black, 0.8) inset;
+    transition: all 0.5s;
   }
 
   &:hover {
@@ -29,6 +34,10 @@
 
   &:hover &__title {
     text-shadow: none;
+  }
+
+  &:hover &__right {
+      box-shadow: none;
   }
 
   &__title {
