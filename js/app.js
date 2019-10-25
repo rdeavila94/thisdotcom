@@ -58,7 +58,6 @@ const onscroll = e => {
     sectionTechnical.animatedChildren.forEach(child => {
       child.element.className += child.animationName
     })
-    setTimeout(() => writeText('Java + Node'), fadeInAnimationDelay * 2)
     technicalTriggered = true
   }
 

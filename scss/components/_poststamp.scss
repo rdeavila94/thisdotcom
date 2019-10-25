@@ -13,7 +13,7 @@
     width: 65%;
     height: 100%;
     float: left;
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 1rem;
   }
 
   &__right {
@@ -43,10 +43,11 @@
   &__title {
     font-family: $primary-font;
     color: $color-primary;
-    font-size: 5rem;
+    font-size: 2.5rem;
+    font-style: italic;
     text-shadow: 0 0 0.5rem rgba($color-black, 0.5);
     transition: all 0.5s;
-    display: inline-block;
+    display: inline;
     letter-spacing: .1rem;
   }
 
