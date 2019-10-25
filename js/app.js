@@ -9,13 +9,15 @@ function AnimatedChild(element, animationName) {
   this.animationName = ' ' + animationName
 }
 
+const sectionAboutDistance = document.querySelector('.section-header').offsetHeight
+const sectionTechnicalDistance = document.querySelector('.section-about').offsetHeight + sectionAboutDistance
+
 // To avoid repeating the trigger on subsequent scrolls that satisfy the trigger
 let aboutTriggered = false
 let technicalTriggered = false
 
 // How far into sections to trigger the fade in
-const aboutOffsetMargin = 200
-const technicalOffsetMargin = 400
+const offsetTrigger = 200
 
 // How long the fade in animation is configured to last on the CSS side
 const fadeInAnimationDelay = 500
@@ -43,7 +45,7 @@ const onscroll = e => {
   const windowHeight = window.innerHeight
   const windowDistance = window.pageYOffset
 
-  if (sectionAbout.element.offsetHeight > windowHeight - windowDistance + aboutOffsetMargin && !aboutTriggered) {
+  if (sectionAboutDistance < windowHeight + windowDistance - offsetTrigger && !aboutTriggered) {
     sectionAbout.element.className = 'section-about fade-in'
     sectionAbout.animatedChildren.forEach(child => {
       child.element.className += child.animationName
@@ -51,7 +53,7 @@ const onscroll = e => {
     aboutTriggered = true
   }
 
-  if (sectionTechnical.element.offsetHeight > windowHeight - windowDistance + technicalOffsetMargin && !technicalTriggered) {
+  if (sectionTechnicalDistance < windowHeight + windowDistance - offsetTrigger && !technicalTriggered) {
     sectionTechnical.element.className = 'section-technical__content fade-in'
     sectionTechnical.animatedChildren.forEach(child => {
       child.element.className += child.animationName
