@@ -18,6 +18,16 @@
     }
   }
 
+  &--inverted {
+    background-color: $color-white;
+    color: $color-black;
+
+    &:hover {
+      background-color: $color-black;
+      color: $color-white;
+    }
+  }
+
   &--large {
       font-size: 3rem;
       letter-spacing: .3rem;
