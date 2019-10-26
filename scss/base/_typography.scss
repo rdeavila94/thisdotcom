@@ -19,10 +19,6 @@
     background-clip: text;
     background-image: linear-gradient(to right, $color-secondary, $color-secondary-dark);
   }
-
-  &--white {
-    color: $color-white;
-  }
 }
 
 .header-secondary {
@@ -30,14 +26,6 @@
   font-size: 5rem;
   color: $color-secondary;
   letter-spacing: 0.1rem;
-}
-
-.lg {
-  font-size: 6rem;
-}
-
-.x-lg {
-  font-size: 8rem;
 }
 
 .blinking-text {

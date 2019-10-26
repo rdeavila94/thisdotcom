@@ -27,9 +27,11 @@ const sectionAbout = new AnimatedParent(document.querySelector('#section-about')
 
 const typeAnimate = document.querySelector('#type-animate')
 
-const animatedHr = new AnimatedChild(document.querySelector('#animated-hr'), 'u-line-slice--animated')
+const animatedHr = new AnimatedChild(document.querySelector('#animated-hr'), 'title-box__line--animated')
 const popupHeader = new AnimatedChild(document.querySelector('#popup-header'), 'pop-up')
-const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr, popupHeader])
+const java = new AnimatedChild(document.querySelector('#java'), 'u-come-in-left')
+const javascript = new AnimatedChild(document.querySelector('#javascript'), 'u-come-in-right')
+const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr, popupHeader, java, javascript])
 
 // Function to create a 'typing' animation
 const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
