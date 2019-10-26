@@ -20,10 +20,36 @@
     width: 34%;
     height: 100%;
     float: right;
-    background-image: url('../img/code.jpg'), radial-gradient($color-secondary, $color-secondary);
+    background-image: url("../img/code.png"), radial-gradient(rgba($color-secondary-light, .5), rgba($color-secondary, .5));
     background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: left;
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(
+      100% 0,
+      100% 100%,
+      0 100%,
+      3% 95%,
+      1% 90%,
+      5% 85%,
+      3% 80%,
+      7% 75%,
+      5% 70%,
+      9% 65%,
+      7% 60%,
+      11% 55%,
+      9% 50%,
+      13% 45%,
+      11% 40%,
+      15% 35%,
+      13% 30%,
+      17% 25%,
+      15% 20%,
+      19% 15%,
+      17% 10%,
+      21% 5%,
+      19% 0
+    );
     box-shadow: 0 0 1rem rgba($color-black, 0.8) inset;
     transition: all 0.5s;
   }
@@ -37,7 +63,7 @@
   }
 
   &:hover &__right {
-      box-shadow: none;
+    box-shadow: none;
   }
 
   &__title {
@@ -48,14 +74,14 @@
     text-shadow: 0 0 0.5rem rgba($color-black, 0.5);
     transition: all 0.5s;
     display: inline;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
   }
 
   &__content {
     font-family: $primary-font;
     display: inline;
     font-size: 2.1rem;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     line-height: 200%;
     color: $color-secondary-dark;
   }
