@@ -1,3 +1,7 @@
+[class^="section-"] {
+  overflow: hidden;
+}
+
 .section-header {
   height: 100vh;
   position: relative;
@@ -40,7 +44,6 @@
     100% 100%,
     0 100%
   );
-  overflow: hidden;
 
   &__content {
     background-color: transparent;
