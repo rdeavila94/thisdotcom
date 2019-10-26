@@ -89,3 +89,23 @@
 .pop-up {
   animation: pop-up .5s $fade-in-animation-delay linear backwards;
 }
+
+.u-java {
+  height: 12.5rem;
+  width: 12.5rem;
+  opacity: 0;
+}
+
+.u-javascript {
+  height: 13rem;
+  width: 8.4rem;
+  opacity: 0;
+}
+
+.u-come-in-right {
+  animation: come-in-right .7s linear calc(#{$fade-in-animation-delay} * 2) forwards;
+}
+
+.u-come-in-left {
+  animation: come-in-left .7s linear calc(#{$fade-in-animation-delay} * 2) forwards;
+}
