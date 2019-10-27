@@ -2,22 +2,16 @@
   position: absolute;
   top: -2rem;
   font-size: 4rem;
-  color: $color-white;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   box-shadow: 0rem 0rem 3rem rgba($color-black, 0.5);
-  z-index: 3;
+  z-index: 1;
   font-family: $primary-font;
+  left: 0;
+  transform: translate(-4vw, -50%) rotateZ(-25deg);
 
-  &--left {
-    left: 0;
-    transform: translate(-4vw, -50%) rotateZ(-25deg);
+  &--primary {
     background-image: linear-gradient(to top right, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.8));
-  }
-
-  &--right {
-    right: 0;
-    transform: translate(calc(#{$gutter-horizontal/2}), -50%) rotateZ(25deg);
-    background-image: linear-gradient(to top left, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.8));
+    color: $color-white;
   }
 }

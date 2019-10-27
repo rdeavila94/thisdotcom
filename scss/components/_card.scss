@@ -108,4 +108,14 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  &__paragraph {
+    color: $color-secondary-light;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    line-height: 150%;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem;
+    font-family: $primary-font;
+  }
 }
