@@ -24,7 +24,7 @@
   &__logos {
     text-align: center;
     font-family: $primary-font;
-    font-size: 6.5rem;
+    font-size: 0; //this was set to 0 because space between inline-blocked elements will be rendered as white space
     padding: 1rem 0;
     overflow: hidden;
   }
@@ -33,19 +33,25 @@
     opacity: 0;
     display: inline-block;
     color: $color-white;
+    clear: none;
+    font-size: 6.5rem;
   }
 
   &__logo-right {
     opacity: 0;
     display: inline-block;
     color: $color-black;
+    clear: none;
+    font-size: 6.5rem;
   }
 
   &__animate-right {
-    animation: come-in-right $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards, drop-down-and-out 4s linear infinite calc(#{$fade-in-animation-delay} * 2 + 4s);
+    animation: come-in-right $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards,
+      drop-down-and-out 4s linear infinite calc(#{$fade-in-animation-delay} * 2 + 4s);
   }
-  
+
   &__animate-left {
-    animation: come-in-left $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards, black-and-white 4s linear infinite calc(#{$fade-in-animation-delay} * 2 + 2s);
+    animation: come-in-left $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards,
+      black-and-white 4s linear infinite calc(#{$fade-in-animation-delay} * 2 + 2s);
   }
 }
