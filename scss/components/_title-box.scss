@@ -23,17 +23,20 @@
 
   &__logos {
     text-align: center;
+    font-family: $primary-font;
+    font-size: 6.5rem;
+    padding-bottom: 1rem;
   }
 
   &__logo-left {
-    height: 12.5rem;
-    width: 12.5rem;
     opacity: 0;
+    display: inline-block;
+    color: $color-white;
   }
 
   &__logo-right {
-    height: 13rem;
-    width: 8.4rem;
     opacity: 0;
+    display: inline-block;
+    color: $color-black;
   }
 }
