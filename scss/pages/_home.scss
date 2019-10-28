@@ -72,3 +72,42 @@
     background-color: transparent;
   }
 }
+
+.footer {
+  height: 33vh;
+  width: 100vw;
+  background-color: rgba($color-black, 0.9);
+  color: $color-primary;
+  position: relative;
+
+  &__bottom {
+    height: 50%;
+    margin: 0 2rem;
+    transform: translateY(100%);
+    text-align: center;
+  }
+
+  &__contact {
+    border-top: 1px solid currentColor;
+    padding-top: 2rem;
+    display: inline-block;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+
+  &__icon {
+    fill: currentColor;
+    height: 5rem;
+    width: 5rem;
+    display: inline-block;
+    margin: 1rem 5rem;
+
+    &:hover {
+      filter: drop-shadow(0 0 .5rem rgba($color-white, .8));
+    }
+  }
+}
