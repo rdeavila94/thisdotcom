@@ -77,9 +77,9 @@
 }
 
 .u-come-in-right {
-  animation: come-in-right .7s linear calc(#{$fade-in-animation-delay} * 2) forwards;
+  animation: come-in-right 2s linear calc(#{$fade-in-animation-delay} * 2) forwards;
 }
 
 .u-come-in-left {
-  animation: come-in-left .7s linear calc(#{$fade-in-animation-delay} * 2) forwards;
+  animation: come-in-left 2s linear calc(#{$fade-in-animation-delay} * 2) forwards;
 }
