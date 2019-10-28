@@ -80,10 +80,32 @@
   color: $color-primary;
   position: relative;
 
+  &__top {
+    height: 50%;
+    display: block;
+    text-align: center;
+    position: relative;
+  }
+
+  &__description {
+    font-size: 2rem;
+    font-family: $primary-font;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    margin-bottom: 1rem;
+  }
+
+  &__logo {
+    max-height: 2.5rem;
+    display: inline-block;
+  }
+
   &__bottom {
     height: 50%;
     margin: 0 2rem;
-    transform: translateY(100%);
     text-align: center;
   }
 
