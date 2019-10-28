@@ -29,8 +29,8 @@ const typeAnimate = document.querySelector('#type-animate')
 
 const animatedHr = new AnimatedChild(document.querySelector('#animated-hr'), 'title-box__line--animated')
 const popupHeader = new AnimatedChild(document.querySelector('#popup-header'), 'pop-up')
-const java = new AnimatedChild(document.querySelector('#java'), 'u-come-in-left')
-const javascript = new AnimatedChild(document.querySelector('#javascript'), 'u-come-in-right')
+const java = new AnimatedChild(document.querySelector('#java'), 'title-box__animate-left')
+const javascript = new AnimatedChild(document.querySelector('#javascript'), 'title-box__animate-right')
 const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr, popupHeader, java, javascript])
 
 // Function to create a 'typing' animation

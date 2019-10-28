@@ -75,11 +75,3 @@
 .pop-up {
   animation: pop-up .5s $fade-in-animation-delay linear backwards;
 }
-
-.u-come-in-right {
-  animation: come-in-right 2s linear calc(#{$fade-in-animation-delay} * 2) forwards;
-}
-
-.u-come-in-left {
-  animation: come-in-left 2s linear calc(#{$fade-in-animation-delay} * 2) forwards;
-}
