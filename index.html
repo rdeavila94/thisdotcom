@@ -65,7 +65,8 @@
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga odio, porro, deserunt rem
                         voluptatem aliquam quisquam excepturi obcaecati mollitia ratione, quasi consectetur. Esse
                         vel
-                        sequi debitis, <a href="#popup-1" class="link">laudantium</a> quis ducimus saepe? Lorem ipsum
+                        sequi debitis, <label for="popup-1" class="link">laudantium</label> quis ducimus saepe? Lorem
+                        ipsum
                         dolor sit,
                         amet consectetur
                         adipisicing elit. Tenetur, id quam iure reiciendis consequatur dolorum quasi vero, ducimus
@@ -260,23 +261,28 @@
 
     </footer>
 
-    <div class="popup" id="popup-1">
-        <div class="popup__box">
-            <div class="popup__content">
-                <div class="popup__left">
-                    <img src="img/hi.png" alt="hi" class="popup__img">
-                </div>
-                <div class="popup__right">
-                    <div class="popup__descr">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. In rerum labore sed inventore, fugiat,
-                        assumenda qui dolores voluptates magnam ad vel odio, facere repellendus autem veritatis pariatur
-                        quos odit ratione?
+    <div class="popup">
+        <input type="checkbox" class="popup__checkbox" id="popup-1">
+        <div class="popup__body">
+            <div class="popup__box">
+                <div class="popup__content">
+                    <div class="popup__left">
+                        <img src="img/hi.png" alt="hi" class="popup__img">
+                    </div>
+                    <div class="popup__right">
+                        <div class="popup__descr">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. In rerum labore sed inventore,
+                            fugiat,
+                            assumenda qui dolores voluptates magnam ad vel odio, facere repellendus autem veritatis
+                            pariatur
+                            quos odit ratione?
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="popup__footer">
-                <div class="popup__exit">
-                    <a href="#section-about" class="btn btn--primary btn--large u-bold">Close</a>
+                <div class="popup__footer">
+                    <div class="popup__exit">
+                        <label for="popup-1" class="btn btn--primary btn--large u-bold">Close</a>
+                    </div>
                 </div>
             </div>
         </div>
