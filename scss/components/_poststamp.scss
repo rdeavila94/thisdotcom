@@ -75,6 +75,7 @@
     transition: all 0.5s;
     display: inline;
     letter-spacing: 0.1rem;
+    line-height: 175%;
   }
 
   &__content {
@@ -82,7 +83,7 @@
     display: inline;
     font-size: 2.1rem;
     letter-spacing: 0.1rem;
-    line-height: 200%;
+    line-height: 175%;
     color: $color-secondary-dark;
   }
 }
