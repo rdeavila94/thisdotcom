@@ -22,8 +22,10 @@ const offsetTrigger = 200
 // How long the fade in animation is configured to last on the CSS side
 const fadeInAnimationDelay = 500
 
+const greeting = new AnimatedChild(document.querySelector('#greeting'), 'come-in-left')
+const name = new AnimatedChild(document.querySelector('#name'), 'u-flip-in')
 const animatedLine = new AnimatedChild(document.querySelector('#header-line'), 'u-line--animated')
-const sectionAbout = new AnimatedParent(document.querySelector('#section-about'), [animatedLine])
+const sectionAbout = new AnimatedParent(document.querySelector('#section-about'), [animatedLine, greeting, name])
 
 const typeAnimate = document.querySelector('#type-animate')
 

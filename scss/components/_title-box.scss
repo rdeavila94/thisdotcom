@@ -46,12 +46,12 @@
   }
 
   &__animate-right {
-    animation: come-in-right $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards,
+    animation: crash-in-right $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards,
       drop-down-and-out 4s linear infinite calc(#{$fade-in-animation-delay} * 2 + 4s);
   }
 
   &__animate-left {
-    animation: come-in-left $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards,
+    animation: crash-in-left $bump-animation-duration linear calc(#{$fade-in-animation-delay} * 2) forwards,
       black-and-white 4s linear infinite calc(#{$fade-in-animation-delay} * 2 + 2s);
   }
 }

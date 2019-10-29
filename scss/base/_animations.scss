@@ -107,7 +107,7 @@
   }
 }
 
-@keyframes come-in-right {
+@keyframes crash-in-right {
   0% {
     transform: translateX(25rem);
     opacity: 1;
@@ -135,7 +135,7 @@
   }
 }
 
-@keyframes come-in-left {
+@keyframes crash-in-left {
   0% {
     transform: translateX(-25rem);
     opacity: 1;
@@ -200,5 +200,27 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes come-in-left {
+  from {
+    transform: translateX(-25rem);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes flip-in {
+  from {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
   }
 }
