@@ -33,12 +33,18 @@ const java = new AnimatedChild(document.querySelector('#java'), 'title-box__anim
 const javascript = new AnimatedChild(document.querySelector('#javascript'), 'title-box__animate-right')
 const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr, popupHeader, java, javascript])
 
+const name = document.querySelector('#name')
+const greeting = document.querySelector('#greeting')
+
 // Function to create a 'typing' animation
-const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
+const writeText = (message, writeSpeed = 100, element = typeAnimate, callback) => {
   for (let i = 0; i < message.length; i++) {
     setTimeout(() => {
       element.textContent += message.charAt(i)
     }, writeSpeed * i)
+  }
+  if (callback) {
+    setTimeout(callback, writeSpeed * message.length)
   }
 }
 
@@ -52,6 +58,7 @@ const onscroll = e => {
     sectionAbout.animatedChildren.forEach(child => {
       child.element.className += child.animationName
     })
+    setTimeout(() => writeText("Hi, I'm", 100, greeting, () => writeText('Richard', 100, name)), fadeInAnimationDelay)
     aboutTriggered = true
   }
 
