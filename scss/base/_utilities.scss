@@ -46,9 +46,10 @@
   background-image: linear-gradient(to right, rgba($color-primary-dark, 0.6), rgba($color-primary-light, 0.6));
   margin: 0 auto;
   border-radius: 1rem;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
   &--animated {
-    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards calc(#{$fade-in-animation-delay} + 1s);
+    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) forwards calc(#{$fade-in-animation-delay} + 1s);
   }
 }
 
@@ -73,7 +74,7 @@
 }
 
 .pop-up {
-  animation: pop-up .5s $fade-in-animation-delay linear backwards;
+  animation: pop-up .5s $fade-in-animation-delay linear forwards;
 }
 
 .come-in-left {

@@ -50,7 +50,6 @@ const onscroll = e => {
   const windowDistance = window.pageYOffset
 
   if (sectionAboutDistance < windowHeight + windowDistance - offsetTrigger && !aboutTriggered) {
-    sectionAbout.element.className = 'section-about fade-in'
     sectionAbout.animatedChildren.forEach(child => {
       child.element.className += child.animationName
     })
@@ -58,7 +57,6 @@ const onscroll = e => {
   }
 
   if (sectionTechnicalDistance < windowHeight + windowDistance - offsetTrigger && !technicalTriggered) {
-    sectionTechnical.element.className = 'section-technical__content fade-in'
     sectionTechnical.animatedChildren.forEach(child => {
       child.element.className += child.animationName
     })

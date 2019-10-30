@@ -10,6 +10,9 @@
     letter-spacing: 0.5rem;
     display: inline-block;
     color: $color-white;
+    h3 {
+      transform: translateY(100%);
+    }
   }
 
   &__line {
