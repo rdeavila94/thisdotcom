@@ -88,10 +88,8 @@
   }
 
   &__description {
-    font-size: 1.6rem;
-    font-family: $primary-font;
     margin-top: 1rem;
-    letter-spacing: 0.1rem;
+    @include font-xs;
   }
 
   &__logo {
@@ -129,13 +127,12 @@
   }
 
   &__copyright {
-    font-family: $primary-font;
     position: absolute;
     right: 0;
     bottom: 0;
-    font-size: 1.6rem;
-    letter-spacing: .1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
+
+    @include font-xs;
   }
 }

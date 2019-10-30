@@ -87,9 +87,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0 1rem;
-    font-size: 2.1rem;
-    font-family: $primary-font;
     line-height: 150%;
     text-align: center;
+    @include font-md;
   }
 }
