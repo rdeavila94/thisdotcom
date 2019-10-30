@@ -52,6 +52,7 @@
     );
     box-shadow: 0 0 1rem rgba($color-black, 0.8) inset;
     transition: all 0.5s;
+    border-radius: 0 1rem 1rem 0;
   }
 
   &:hover {
@@ -70,7 +71,6 @@
     font-family: $primary-font;
     color: $color-primary;
     font-size: 2.5rem;
-    font-style: italic;
     text-shadow: 0 0 0.5rem rgba($color-black, 0.5);
     transition: all 0.5s;
     display: inline;
