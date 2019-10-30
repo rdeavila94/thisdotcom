@@ -9,15 +9,12 @@ function AnimatedChild(element, animationName) {
   this.animationName = ' ' + animationName
 }
 
-const sectionAboutDistance = document.querySelector('.section-header').offsetHeight
-const sectionTechnicalDistance = document.querySelector('.section-about').offsetHeight + sectionAboutDistance
-
 // To avoid repeating the trigger on subsequent scrolls that satisfy the trigger
-let aboutTriggered = false
+let greetingTriggered = false
+let bioTriggered = false
+let compTriggered = false
 let technicalTriggered = false
-
-// How far into sections to trigger the fade in
-const offsetTrigger = 200
+let cardTriggered = false
 
 // How long the fade in animation is configured to last on the CSS side
 const fadeInAnimationDelay = 500
@@ -44,26 +41,58 @@ const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
   }
 }
 
+const bio = new AnimatedChild(document.querySelector('#bio-col'), 'col-fade-in-left')
+const comp = new AnimatedChild(document.querySelector('#comp-col'), 'col-fade-in-right')
+
+// How far into sections to trigger the fade in
+const offsetTrigger = 100
+const sectionHeaderHeight = document.querySelector('.section-header').offsetHeight
+const sectionAboutHeight = document.querySelector('.section-about').offsetHeight + sectionHeaderHeight
+const greetingTrigger = sectionHeaderHeight + offsetTrigger
+const bioTrigger = greetingTrigger + document.querySelector('#greeting-row').offsetHeight
+const compTrigger = bioTrigger + comp.element.offsetHeight
+const technicalTrigger = sectionAboutHeight + offsetTrigger
+const cardTrigger = document.querySelector('body').offsetHeight - document.querySelector('.footer').offsetHeight - document.querySelector('#card-row').offsetHeight
+const card1 = new AnimatedChild(document.querySelector('#col-card-1'), 'col-fade-in-left')
+const card2 = new AnimatedChild(document.querySelector('#col-card-2'), 'col-fade-in-right')
+
 // We have to use a named function in order to have the ability to remove the handler
 const onscroll = e => {
+
   const windowHeight = window.innerHeight
   const windowDistance = window.pageYOffset
 
-  if (sectionAboutDistance < windowHeight + windowDistance - offsetTrigger && !aboutTriggered) {
+  if (greetingTrigger < windowHeight + windowDistance - offsetTrigger && !greetingTriggered) {
+    greetingTriggered = true
     sectionAbout.animatedChildren.forEach(child => {
       child.element.className += child.animationName
     })
-    aboutTriggered = true
   }
 
-  if (sectionTechnicalDistance < windowHeight + windowDistance - offsetTrigger && !technicalTriggered) {
+  if (bioTrigger < windowHeight + windowDistance - offsetTrigger && !bioTriggered) {
+    bioTriggered = true
+    bio.element.className = 'col-6 ' + bio.animationName
+  }
+
+  if (compTrigger < windowHeight + windowDistance - offsetTrigger && !compTriggered) {
+    compTriggered = true
+    comp.element.className = 'col-6 ' + comp.animationName
+  }
+
+  if (technicalTrigger < windowHeight + windowDistance - offsetTrigger && !technicalTriggered) {
+    technicalTriggered = true
     sectionTechnical.animatedChildren.forEach(child => {
       child.element.className += child.animationName
     })
-    technicalTriggered = true
   }
 
-  if (aboutTriggered && technicalTriggered) {
+  if (cardTrigger < windowHeight + windowDistance - offsetTrigger && !cardTriggered) {
+    cardTriggered = true
+    card1.element.className = 'col-6 ' + card1.animationName
+    card2.element.className = 'col-6 ' + card2.animationName
+  }
+
+  if (greetingTriggered && bioTriggered && compTriggered && technicalTriggered && cardTriggered) {
     document.removeEventListener('scroll', onscroll)
   }
 }
