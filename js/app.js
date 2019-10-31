@@ -18,6 +18,7 @@ let greetingTriggered = false
 let bioTriggered = false
 let compTriggered = false
 let technicalTriggered = false
+let poststampTriggered = false
 let cardTriggered = false
 
 const greeting = new AnimatedElement(document.querySelector('#greeting'), 'come-in-left', 'u-hidden')
@@ -29,6 +30,7 @@ const animatedHr = new AnimatedElement(document.querySelector('#animated-hr'), '
 const popupHeader = new AnimatedElement(document.querySelector('#popup-header'), 'pop-up', 'u-hidden')
 const java = new AnimatedElement(document.querySelector('#java'), 'title-box__animate-left', 'u-hidden')
 const javascript = new AnimatedElement(document.querySelector('#javascript'), 'title-box__animate-right', 'u-hidden')
+const poststamp = new AnimatedElement(document.querySelector('#poststamp'), 'poststamp__overlay--animated')
 const card1 = new AnimatedElement(document.querySelector('#col-card-1'), 'col-fade-in-left', 'u-hidden')
 const card2 = new AnimatedElement(document.querySelector('#col-card-2'), 'col-fade-in-right', 'u-hidden')
 
@@ -68,7 +70,12 @@ const onscroll = e => {
     javascript.animate()
   }
 
-  if (technicalTriggered && !cardTriggered && card1.element.getBoundingClientRect().top < windowHeight) {
+  if (technicalTriggered && !poststampTriggered && poststamp.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+    poststampTriggered = true
+    poststamp.animate()
+  }
+
+  if (poststampTriggered && !cardTriggered && card1.element.getBoundingClientRect().top < windowHeight - animationMargin) {
     cardTriggered = true
     card1.animate()
     card2.animate()

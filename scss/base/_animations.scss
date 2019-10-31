@@ -204,6 +204,66 @@
   }
 }
 
+@keyframes open-up {
+  from {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      97% 5%,
+      99% 10%,
+      95% 15%,
+      97% 20%,
+      93% 25%,
+      95% 30%,
+      91% 35%,
+      93% 40%,
+      89% 45%,
+      91% 50%,
+      87% 55%,
+      89% 60%,
+      85% 65%,
+      87% 70%,
+      83% 75%,
+      85% 80%,
+      81% 85%,
+      83% 90%,
+      79% 95%,
+      81% 100%,
+      0 100%,
+      0 0
+    );
+  }
+
+  to {
+    clip-path: polygon(
+      0 0,
+      0% 0,
+      -2% 5%,
+       0 10%,
+      -4% 15%,
+      -2% 20%,
+      -6% 25%,
+      -4% 30%,
+      -8% 35%,
+      -6% 40%,
+      -10% 45%,
+      -8% 50%,
+      -12% 55%,
+      -10% 60%,
+      -14% 65%,
+      -12% 70%,
+      -16% 75%,
+      -14% 80%,
+      -18% 85%,
+      -16% 90%,
+      -20% 95%,
+      -18% 100%,
+      0 100%,
+      0 0
+    );
+  }
+}
+
 @keyframes flip-in {
   from {
     opacity: 0;
@@ -241,21 +301,21 @@
 }
 
 .col-fade-in-left {
-  animation: col-fade-in-left .5s ease-out backwards;
+  animation: col-fade-in-left 0.5s ease-out backwards;
 }
 
 .col-fade-in-right {
-  animation: col-fade-in-right .5s ease-out backwards;
+  animation: col-fade-in-right 0.5s ease-out backwards;
 }
 
 .pop-up {
-  animation: pop-up .5s linear backwards;
+  animation: pop-up 0.5s linear backwards;
 }
 
 .come-in-left {
-  animation: come-in-left backwards .25s linear;
+  animation: come-in-left backwards 0.25s linear;
 }
 
 .flip-in {
-  animation: flip-in backwards .25s linear ;
+  animation: flip-in backwards 0.25s linear;
 }
