@@ -10,6 +10,9 @@ AnimatedElement.prototype.animate = function () {
 
 let windowHeight = window.innerHeight
 
+// this will be used in case we want to kick off an animation deeper into the scroll
+const animationMargin = 100
+
 // To avoid repeating the trigger on subsequent scrolls that satisfy the trigger
 let greetingTriggered = false
 let bioTriggered = false
@@ -52,12 +55,12 @@ const onscroll = e => {
     bioCol.animate()
   }
 
-  if (bioTriggered && !compTriggered && compCol.element.getBoundingClientRect().top < windowHeight - 100) {
+  if (bioTriggered && !compTriggered && compCol.element.getBoundingClientRect().top < windowHeight - animationMargin) {
     compTriggered = true
     compCol.animate()
   }
 
-  if (compTriggered && !technicalTriggered && popupHeader.element.getBoundingClientRect().top < windowHeight) {
+  if (compTriggered && !technicalTriggered && popupHeader.element.getBoundingClientRect().top < windowHeight - animationMargin) {
     technicalTriggered = true
     animatedHr.animate()
     popupHeader.animate()
@@ -71,14 +74,15 @@ const onscroll = e => {
     card2.animate()
   }
 
-  if (greetingTriggered && bioTriggered && compTriggered && technicalTriggered && cardTriggered) {
+  // if the last animation has kicked off, remove the event listener
+  if (cardTriggered) {
     document.removeEventListener('scroll', onscroll)
   }
 }
 
-// remove this event listener once they've scrolled all the way down
 document.addEventListener('scroll', onscroll)
 
+// recalculate the windows height in case the user resizes their window
 window.addEventListener('resize', () => {
   windowHeight = window.innerHeight
 }, false)
