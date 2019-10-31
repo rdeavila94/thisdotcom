@@ -16,9 +16,6 @@ let compTriggered = false
 let technicalTriggered = false
 let cardTriggered = false
 
-// How long the fade in animation is configured to last on the CSS side
-const fadeInAnimationDelay = 500
-
 const greeting = new AnimatedChild(document.querySelector('#greeting'), 'come-in-left')
 const name = new AnimatedChild(document.querySelector('#name'), 'u-flip-in')
 const animatedLine = new AnimatedChild(document.querySelector('#header-line'), 'u-line--animated')
@@ -44,21 +41,26 @@ const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
 const bio = new AnimatedChild(document.querySelector('#bio-col'), 'col-fade-in-left')
 const comp = new AnimatedChild(document.querySelector('#comp-col'), 'col-fade-in-right')
 
+let offsetTrigger, sectionHeaderHeight, sectionAboutHeight, greetingTrigger, bioTrigger, compTrigger, technicalTrigger, cardTrigger
+
 // How far into sections to trigger the fade in
-const offsetTrigger = 100
-const sectionHeaderHeight = document.querySelector('.section-header').offsetHeight
-const sectionAboutHeight = document.querySelector('.section-about').offsetHeight + sectionHeaderHeight
-const greetingTrigger = sectionHeaderHeight + offsetTrigger
-const bioTrigger = greetingTrigger + document.querySelector('#greeting-row').offsetHeight
-const compTrigger = bioTrigger + comp.element.offsetHeight
-const technicalTrigger = sectionAboutHeight + offsetTrigger
-const cardTrigger = document.querySelector('body').offsetHeight - document.querySelector('.footer').offsetHeight - document.querySelector('#card-row').offsetHeight
+const calculateOffsets = () => {
+  offsetTrigger = 100
+  sectionHeaderHeight = document.querySelector('.section-header').offsetHeight
+  sectionAboutHeight = document.querySelector('.section-about').offsetHeight + sectionHeaderHeight
+  greetingTrigger = sectionHeaderHeight + offsetTrigger
+  bioTrigger = greetingTrigger + document.querySelector('#greeting-row').offsetHeight
+  compTrigger = bioTrigger + comp.element.offsetHeight
+  technicalTrigger = sectionAboutHeight + offsetTrigger
+  cardTrigger = document.querySelector('body').offsetHeight - document.querySelector('.footer').offsetHeight - document.querySelector('#card-row').offsetHeight
+}
+calculateOffsets()
+
 const card1 = new AnimatedChild(document.querySelector('#col-card-1'), 'col-fade-in-left')
 const card2 = new AnimatedChild(document.querySelector('#col-card-2'), 'col-fade-in-right')
 
 // We have to use a named function in order to have the ability to remove the handler
 const onscroll = e => {
-
   const windowHeight = window.innerHeight
   const windowDistance = window.pageYOffset
 
@@ -98,3 +100,5 @@ const onscroll = e => {
 }
 // remove this event listener once they've scrolled all the way down
 document.addEventListener('scroll', onscroll)
+
+window.addEventListener('resize', calculateOffsets, false)
