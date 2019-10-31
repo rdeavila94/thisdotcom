@@ -20,8 +20,8 @@
     width: 34%;
     height: 100%;
     float: right;
-    background-image: url("../img/code.png"), radial-gradient(rgba($color-secondary-light, .5), rgba($color-secondary, .5));
-    background-blend-mode: overlay;
+    background-image: url("../img/code.png");
+    filter: contrast(0.7);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
@@ -65,6 +65,7 @@
 
   &:hover &__right {
     box-shadow: none;
+    filter: contrast(1);
   }
 
   &__title {
