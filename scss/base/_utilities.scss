@@ -48,42 +48,30 @@
   border-radius: 1rem;
 
   &--animated {
-    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards 1s;
+    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards;
   }
-}
-
-.u-color-primary {
-  color: $color-primary;
 }
 
 .u-inline-block {
   display: inline-block;
 }
 
-.hidden {
+.u-hidden {
   opacity: 0;
-}
-
-.fade-in {
-  animation: fade-in $fade-in-animation-delay linear;
 }
 
 .u-hide-overflow {
   overflow: hidden;
 }
 
-.pop-up {
-  animation: pop-up .5s $fade-in-animation-delay linear backwards;
+.u-animation-delay-lg {
+  animation-delay: 1s;
 }
 
-.come-in-left {
-  animation: come-in-left backwards .25s .25s linear;
+.u-animation-delay-md {
+  animation-delay: .75s;
 }
 
-.u-move-out {
-  transform: translateY(-25rem);
-}
-
-.u-flip-in {
-  animation: flip-in backwards .25s .75s linear ;
+.u-animation-delay-sm {
+  animation-delay: .25s;
 }

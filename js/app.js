@@ -20,17 +20,17 @@ let compTriggered = false
 let technicalTriggered = false
 let cardTriggered = false
 
-const greeting = new AnimatedElement(document.querySelector('#greeting'), 'come-in-left', 'hidden')
-const name = new AnimatedElement(document.querySelector('#name'), 'u-flip-in', 'hidden')
-const uLine = new AnimatedElement(document.querySelector('#header-line'), 'u-line--animated', 'hidden')
-const bioCol = new AnimatedElement(document.querySelector('#bio-col'), 'col-fade-in-left', 'hidden')
-const compCol = new AnimatedElement(document.querySelector('#comp-col'), 'col-fade-in-right', 'hidden')
-const animatedHr = new AnimatedElement(document.querySelector('#animated-hr'), 'title-box__line--animated', 'hidden')
-const popupHeader = new AnimatedElement(document.querySelector('#popup-header'), 'pop-up', 'hidden')
-const java = new AnimatedElement(document.querySelector('#java'), 'title-box__animate-left', 'hidden')
-const javascript = new AnimatedElement(document.querySelector('#javascript'), 'title-box__animate-right', 'hidden')
-const card1 = new AnimatedElement(document.querySelector('#col-card-1'), 'col-fade-in-left', 'hidden')
-const card2 = new AnimatedElement(document.querySelector('#col-card-2'), 'col-fade-in-right', 'hidden')
+const greeting = new AnimatedElement(document.querySelector('#greeting'), 'come-in-left', 'u-hidden')
+const name = new AnimatedElement(document.querySelector('#name'), 'flip-in', 'u-hidden')
+const uLine = new AnimatedElement(document.querySelector('#header-line'), 'u-line--animated', 'u-hidden')
+const bioCol = new AnimatedElement(document.querySelector('#bio-col'), 'col-fade-in-left', 'u-hidden')
+const compCol = new AnimatedElement(document.querySelector('#comp-col'), 'col-fade-in-right', 'u-hidden')
+const animatedHr = new AnimatedElement(document.querySelector('#animated-hr'), 'title-box__line--animated', 'u-hidden')
+const popupHeader = new AnimatedElement(document.querySelector('#popup-header'), 'pop-up', 'u-hidden')
+const java = new AnimatedElement(document.querySelector('#java'), 'title-box__animate-left', 'u-hidden')
+const javascript = new AnimatedElement(document.querySelector('#javascript'), 'title-box__animate-right', 'u-hidden')
+const card1 = new AnimatedElement(document.querySelector('#col-card-1'), 'col-fade-in-left', 'u-hidden')
+const card2 = new AnimatedElement(document.querySelector('#col-card-2'), 'col-fade-in-right', 'u-hidden')
 
 // Function to create a 'typing' animation
 const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
