@@ -48,7 +48,7 @@
   border-radius: 1rem;
 
   &--animated {
-    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards calc(#{$fade-in-animation-delay} + 1s);
+    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards 1s;
   }
 }
 
@@ -77,7 +77,7 @@
 }
 
 .come-in-left {
-  animation: come-in-left forwards .25s $fade-in-animation-delay linear;
+  animation: come-in-left backwards .25s .25s linear;
 }
 
 .u-move-out {
@@ -85,5 +85,5 @@
 }
 
 .u-flip-in {
-  animation: flip-in forwards .25s calc(#{$fade-in-animation-delay} + .5s) linear ;
+  animation: flip-in backwards .25s .75s linear ;
 }

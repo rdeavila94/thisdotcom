@@ -30,15 +30,15 @@
         </div>
     </div>
 
-    <div class="section-about hidden" id="section-about">
-        <div class="row">
+    <div class="section-about" id="section-about">
+        <div class="row" id="greeting-row">
             <div class="col-9">
                 <div class="u-inline-block u-hide-overflow">
-                    <h1 class="center-vertical"> <span class="header-primary header-primary--secondary u-move-out" id="greeting">Hi, I'm</span>
+                    <h1 class="center-vertical"> <span class="header-primary header-primary--secondary hidden" id="greeting">Hi, I'm</span>
                         &nbsp;
                         <span class="header-primary header-primary--primary hidden" id="name"> Richard</span>
                     </h1>
-                    <div class="u-line" id="header-line"></div>
+                    <div class="u-line hidden" id="header-line"></div>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
         </div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 hidden" id="bio-col">
                 <div class="bio u-mt">
 
                     <div class="bio__header">
@@ -78,7 +78,7 @@
                     <div class="tag tag--primary">mini bio</div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 hidden" id="comp-col">
                 <div class="u-mt-big">
                     <div class="composition">
                         <div class="composition__image composition__image--1">
@@ -107,7 +107,7 @@
     </div>
 
     <div class="section-technical">
-        <div class="section-technical__content hidden" id="section-technical">
+        <div class="section-technical__content" id="section-technical">
             <div class="section-technical__ribbon">
             </div>
             <div class="section-technical__ribbon-text">
@@ -116,12 +116,12 @@
             <div class="row">
                 <div class="title-box">
                     <div class="title-box__title">
-                        <h3 id="popup-header">Developer</h3>
+                        <h3 id="popup-header" class="hidden">Developer</h3>
                     </div>
-                    <hr class="title-box__line" id="animated-hr">
+                    <hr class="title-box__line hidden" id="animated-hr">
                     <div class="title-box__logos">
-                        <h4 class="title-box__logo-left" id="java">Java</h4>
-                        <h4 class="title-box__logo-right" id="javascript">Script</h4>
+                        <h4 class="title-box__logo-left hidden" id="java">Java</h4>
+                        <h4 class="title-box__logo-right hidden" id="javascript">Script</h4>
                     </div>
                 </div>
             </div>
@@ -148,9 +148,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="card-row">
                 <div class="u-mt-xl">
-                    <div class="col-6">
+                    <div class="col-6 hidden" id="col-card-1">
                         <div class="card u-div-center">
                             <input type="checkbox" class="card__checkbox" id="checkbox-1">
                             <div class="card__front">
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 hidden" id="col-card-2">
                         <div class="card u-div-center">
                             <input type="checkbox" class="card__checkbox" id="checkbox-2">
                             <div class="card__front">

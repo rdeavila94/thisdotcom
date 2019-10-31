@@ -1,39 +1,36 @@
-// Constructors for objects to facilitate animations nested within a fade in section
-function AnimatedParent(element, animatedChildren) {
+function AnimatedElement(element, animationClass, replacingClass = undefined) {
   this.element = element
-  this.animatedChildren = animatedChildren
+  this.animationClass = animationClass
+  this.replacingClass = replacingClass
 }
 
-function AnimatedChild(element, animationName) {
-  this.element = element
-  this.animationName = ' ' + animationName
+AnimatedElement.prototype.animate = function () {
+  this.replacingClass ? this.element.classList.replace(this.replacingClass, this.animationClass) : this.element.classList.add(this.animationClass)
 }
 
-const sectionAboutDistance = document.querySelector('.section-header').offsetHeight
-const sectionTechnicalDistance = document.querySelector('.section-about').offsetHeight + sectionAboutDistance
+let windowHeight = window.innerHeight
+
+// this will be used in case we want to kick off an animation deeper into the scroll
+const animationMargin = 100
 
 // To avoid repeating the trigger on subsequent scrolls that satisfy the trigger
-let aboutTriggered = false
+let greetingTriggered = false
+let bioTriggered = false
+let compTriggered = false
 let technicalTriggered = false
+let cardTriggered = false
 
-// How far into sections to trigger the fade in
-const offsetTrigger = 200
-
-// How long the fade in animation is configured to last on the CSS side
-const fadeInAnimationDelay = 500
-
-const greeting = new AnimatedChild(document.querySelector('#greeting'), 'come-in-left')
-const name = new AnimatedChild(document.querySelector('#name'), 'u-flip-in')
-const animatedLine = new AnimatedChild(document.querySelector('#header-line'), 'u-line--animated')
-const sectionAbout = new AnimatedParent(document.querySelector('#section-about'), [animatedLine, greeting, name])
-
-const typeAnimate = document.querySelector('#type-animate')
-
-const animatedHr = new AnimatedChild(document.querySelector('#animated-hr'), 'title-box__line--animated')
-const popupHeader = new AnimatedChild(document.querySelector('#popup-header'), 'pop-up')
-const java = new AnimatedChild(document.querySelector('#java'), 'title-box__animate-left')
-const javascript = new AnimatedChild(document.querySelector('#javascript'), 'title-box__animate-right')
-const sectionTechnical = new AnimatedParent(document.querySelector('#section-technical'), [animatedHr, popupHeader, java, javascript])
+const greeting = new AnimatedElement(document.querySelector('#greeting'), 'come-in-left', 'hidden')
+const name = new AnimatedElement(document.querySelector('#name'), 'u-flip-in', 'hidden')
+const uLine = new AnimatedElement(document.querySelector('#header-line'), 'u-line--animated', 'hidden')
+const bioCol = new AnimatedElement(document.querySelector('#bio-col'), 'col-fade-in-left', 'hidden')
+const compCol = new AnimatedElement(document.querySelector('#comp-col'), 'col-fade-in-right', 'hidden')
+const animatedHr = new AnimatedElement(document.querySelector('#animated-hr'), 'title-box__line--animated', 'hidden')
+const popupHeader = new AnimatedElement(document.querySelector('#popup-header'), 'pop-up', 'hidden')
+const java = new AnimatedElement(document.querySelector('#java'), 'title-box__animate-left', 'hidden')
+const javascript = new AnimatedElement(document.querySelector('#javascript'), 'title-box__animate-right', 'hidden')
+const card1 = new AnimatedElement(document.querySelector('#col-card-1'), 'col-fade-in-left', 'hidden')
+const card2 = new AnimatedElement(document.querySelector('#col-card-2'), 'col-fade-in-right', 'hidden')
 
 // Function to create a 'typing' animation
 const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
@@ -46,28 +43,46 @@ const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
 
 // We have to use a named function in order to have the ability to remove the handler
 const onscroll = e => {
-  const windowHeight = window.innerHeight
-  const windowDistance = window.pageYOffset
-
-  if (sectionAboutDistance < windowHeight + windowDistance - offsetTrigger && !aboutTriggered) {
-    sectionAbout.element.className = 'section-about fade-in'
-    sectionAbout.animatedChildren.forEach(child => {
-      child.element.className += child.animationName
-    })
-    aboutTriggered = true
+  if (!greetingTriggered && greeting.element.getBoundingClientRect().top < windowHeight) {
+    greetingTriggered = true
+    greeting.animate()
+    name.animate()
+    uLine.animate()
   }
 
-  if (sectionTechnicalDistance < windowHeight + windowDistance - offsetTrigger && !technicalTriggered) {
-    sectionTechnical.element.className = 'section-technical__content fade-in'
-    sectionTechnical.animatedChildren.forEach(child => {
-      child.element.className += child.animationName
-    })
+  if (greetingTriggered && !bioTriggered && bioCol.element.getBoundingClientRect().top < windowHeight) {
+    bioTriggered = true
+    bioCol.animate()
+  }
+
+  if (bioTriggered && !compTriggered && compCol.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+    compTriggered = true
+    compCol.animate()
+  }
+
+  if (compTriggered && !technicalTriggered && popupHeader.element.getBoundingClientRect().top < windowHeight - animationMargin) {
     technicalTriggered = true
+    animatedHr.animate()
+    popupHeader.animate()
+    java.animate()
+    javascript.animate()
   }
 
-  if (aboutTriggered && technicalTriggered) {
+  if (technicalTriggered && !cardTriggered && card1.element.getBoundingClientRect().top < windowHeight) {
+    cardTriggered = true
+    card1.animate()
+    card2.animate()
+  }
+
+  // if the last animation has kicked off, remove the event listener
+  if (cardTriggered) {
     document.removeEventListener('scroll', onscroll)
   }
 }
-// remove this event listener once they've scrolled all the way down
+
 document.addEventListener('scroll', onscroll)
+
+// recalculate the windows height in case the user resizes their window
+window.addEventListener('resize', () => {
+  windowHeight = window.innerHeight
+}, false)
