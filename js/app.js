@@ -70,7 +70,7 @@ const onscroll = e => {
     javascript.animate()
   }
 
-  if (technicalTriggered && !poststampTriggered && poststamp.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+  if (technicalTriggered && !poststampTriggered && poststamp.element.getBoundingClientRect().top < windowHeight) {
     poststampTriggered = true
     poststamp.animate()
   }
