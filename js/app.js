@@ -29,7 +29,8 @@ const compCol = new AnimatedElement(document.querySelector('#comp-col'), 'col-fa
 const animatedHr = new AnimatedElement(document.querySelector('#animated-hr'), 'title-box__line--animated', 'u-hidden')
 const popupHeader = new AnimatedElement(document.querySelector('#popup-header'), 'pop-up', 'u-hidden')
 const java = new AnimatedElement(document.querySelector('#java'), 'title-box__animate-left', 'u-hidden')
-const javascript = new AnimatedElement(document.querySelector('#javascript'), 'title-box__animate-right', 'u-hidden')
+const node = new AnimatedElement(document.querySelector('#node'), 'title-box__animate-right', 'u-hidden')
+const and = new AnimatedElement(document.querySelector('#and'), 'fade-in', 'u-hidden')
 const poststamp = new AnimatedElement(document.querySelector('#poststamp'), 'poststamp__overlay--animated')
 const card1 = new AnimatedElement(document.querySelector('#col-card-1'), 'col-fade-in-left', 'u-hidden')
 const card2 = new AnimatedElement(document.querySelector('#col-card-2'), 'col-fade-in-right', 'u-hidden')
@@ -66,8 +67,11 @@ const onscroll = e => {
     technicalTriggered = true
     animatedHr.animate()
     popupHeader.animate()
-    java.animate()
-    javascript.animate()
+    setTimeout(() => {
+      java.animate()
+      node.animate()
+      and.animate()
+    }, 500)
   }
 
   if (technicalTriggered && !poststampTriggered && poststamp.element.getBoundingClientRect().top < windowHeight) {

@@ -1,9 +1,9 @@
 .title-box {
   display: inline-block;
   overflow: hidden;
+  text-align: center;
 
   &__title {
-    text-align: center;
     overflow: hidden;
     display: inline-block;
     color: $color-white;
@@ -23,11 +23,12 @@
     text-align: center;
     font-family: $primary-font;
     font-size: 0; //this was set to 0 because space between inline-blocked elements will be rendered as white space
-    padding: 0 1rem;
-    overflow: hidden;
+    padding: 0 3rem 3rem 3rem;
+    display: inline-block;
+    color: $color-white;
   }
 
-  &__logo-left {
+  &__sub {
     display: inline-block;
     color: $color-white;
     clear: none;
@@ -35,21 +36,13 @@
     @include font-header;
   }
 
-  &__logo-right {
-    display: inline-block;
-    color: $color-black;
-    clear: none;
-    font-size: 6.5rem;
-    @include font-header;
-  }
+  &
 
   &__animate-right {
-    animation: crash-in-right $bump-animation-duration linear backwards .5s,
-      drop-down-and-out 4s linear infinite calc(#{$bump-animation-duration + .5s});
+    animation: crash-in-right $bump-animation-duration linear;
   }
 
   &__animate-left {
-    animation: crash-in-left $bump-animation-duration linear backwards .5s,
-      black-and-white 4s linear infinite $bump-animation-duration;
+    animation: crash-in-left $bump-animation-duration linear;
   }
 }
