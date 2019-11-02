@@ -52,6 +52,10 @@
   }
 }
 
+.u-block {
+  display: block;
+}
+
 .u-inline-block {
   display: inline-block;
 }
@@ -64,6 +68,10 @@
   overflow: hidden;
 }
 
+.u-animation-delay-xl {
+  animation-delay: 2s;
+}
+
 .u-animation-delay-lg {
   animation-delay: 1s;
 }
@@ -74,4 +82,29 @@
 
 .u-animation-delay-sm {
   animation-delay: .25s;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-rotate-z {
+  transform: rotateZ(-5deg);
+}
+
+.u-white {
+  color: $color-white;
+}
+
+.u-font-primary {
+  @include font-md;
+}
+
+.u-icon {
+  fill: currentColor;
+
+  &--sm {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
