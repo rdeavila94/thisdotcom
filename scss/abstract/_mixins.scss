@@ -15,7 +15,7 @@
 @mixin font-header-secondary {
   font-family: $primary-font;
   font-size: 5rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 @mixin font-md {
@@ -34,4 +34,43 @@
   font-family: $primary-font;
   font-size: 1.7rem;
   letter-spacing: 0.1rem;
+}
+
+/*
+- phone +600px
+- tab-port +900px
+- tab-land +1200px
+- img-break +1415px
+- desktop-lg 1661+px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 59.375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == img-break {
+    @media (max-width: 88.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-lg {
+    @media (min-width: 106.25em) {
+      @content;
+    }
+  }
 }
