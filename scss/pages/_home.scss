@@ -13,6 +13,10 @@
   padding: 10rem 3rem 5rem 3rem;
   background-color: transparent;
   position: relative;
+
+  @include respond(tab-land) {
+    padding: 10rem 0rem 5rem 0rem;
+  }
 }
 
 .section-technical {
@@ -37,6 +41,10 @@
     background-color: transparent;
     position: relative;
     padding: 10rem 3rem 5rem 3rem;
+
+    @include respond(tab-land) {
+      padding: 10rem 0rem 5rem 0rem;
+    }
   }
 
   &__ribbon {
