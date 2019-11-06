@@ -12,7 +12,7 @@
   letter-spacing: 0.1rem;
   
   @include respond(tab-land) {
-    transform: translate(-2vw, -75%) rotateZ(-25deg);
+    transform: translate(0, -75%) rotateZ(-15deg);
   }
 
   &--primary {
