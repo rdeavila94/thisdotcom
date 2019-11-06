@@ -16,5 +16,10 @@
     shape-outside: content-box;
     margin-left: -5rem;
     margin-top: 7rem;
+
+    @include respond(tab-port) {
+      height: 24rem;
+      width: 24rem;
+    }
   }
 }
