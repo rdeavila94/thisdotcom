@@ -30,5 +30,13 @@
         width: 100%;
       }
     }
+
+    .col-#{$i}-sm {
+      width: grid-size(#{$i});
+
+      @include respond(tab-land) {
+        width: 100%;
+      }
+    }
   }
 }
