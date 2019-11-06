@@ -35,8 +35,13 @@
     }
 
     @include respond(phone) {
-      width: 21rem;
-      height: 14rem;
+      width: 24rem;
+      height: 16rem;
+    }
+
+    @include respond(tight) {
+      width: 20.25rem;
+      height: 13.5rem;
     }
     
   }
