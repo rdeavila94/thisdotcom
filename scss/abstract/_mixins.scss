@@ -37,21 +37,43 @@
 }
 
 /*
+- tight 460
 - phone +560
+- sub-header-break +758
 - tab-port +900px
+- title-break 1000
 - tab-land +1200px
 - img-break +1415px
 - desktop-lg 1661+px
 */
 @mixin respond($breakpoint) {
+
+  @if $breakpoint == tight {
+    @media (max-width:28.75em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == phone {
     @media (max-width: 35em) {
       @content;
     }
   }
 
+  @if $breakpoint == sub-header-break {
+    @media (max-width: 47.375em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == tab-port {
     @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == title-break {
+    @media (max-width: 62.5em) {
       @content;
     }
   }
