@@ -12,6 +12,14 @@
     backface-visibility: hidden;
     animation: 0.8s linear 0.3s backwards;
 
+    @include respond(phone) {
+      font-size: $header-font-size * .9rem;
+    }
+
+    @include respond(tight) {
+      font-size: $header-font-size * .8rem;
+    }
+
     &--left {
       font-family: "BigJohn";
       color: $color-primary;
@@ -20,6 +28,13 @@
       transform-origin: 100% 50%;
       transform: translateY(-100%);
       animation-name: rotate-in-from-right;
+
+      @include respond(title-break) {
+        transform: translate(50%, -100%);
+        animation-name: fall-down-top;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+      }
     }
 
     &--right {
@@ -30,6 +45,13 @@
       left: calc(50% - 1px);
       transform-origin: 0% 50%;
       animation-name: rotate-in-from-left;
+
+      @include respond(title-break) {
+        transform: translateX(-50%);
+        animation-name: fall-down-bottom;
+        animation-delay: 0s;
+        animation-duration: 0.5s;
+      }
     }
   }
 }
@@ -43,8 +65,20 @@
 
   &__career {
     position: absolute;
-    font-size: calc(#{$header-font-size}* 0.7rem);
+    font-size: $header-font-size * 0.7rem;
     top: calc(#{$header-font-size} * -2.1vh);
+
+    @include respond(sub-header-break) {
+      font-size: $header-font-size * 0.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: $header-font-size * 0.45rem;
+    }
+
+    @include respond(tight) {
+      font-size: $header-font-size * 0.35rem;
+    }
     &--left {
       transform: translateX(-100%);
       padding-right: 1rem;
