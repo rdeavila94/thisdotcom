@@ -67,7 +67,7 @@
   }
 
   @if $breakpoint == img-break {
-    @media (max-width: 88.5em) {
+    @media (max-width: 93.125em) {
       @content;
     }
   }

@@ -1,6 +1,14 @@
 .composition {
   position: relative;
 
+  @include respond(tab-land) {
+    width: 100%;
+    //We are specifying margins instead of a width to avoid triggering the hover effect
+    //outside the images
+    margin-top: 30rem;
+  }
+  
+
   &__image {
     position: absolute;
     width: 36rem;
@@ -11,16 +19,32 @@
     overflow: hidden;
     background-blend-mode: luminosity;
 
-    &:hover {
-      transform: scale(1.05);
-      z-index: 2;
+    @include respond(img-break) {
+      width: 32rem;
+      height: 21.3333rem;
     }
+
+    @include respond(tab-land) {
+      width: 34.5rem;
+      height: 23rem;
+    }
+
+    @include respond(tab-port) {
+      width: 30rem;
+      height: 20rem;
+    }
+
+    @include respond(phone) {
+      width: 27rem;
+      height: 18rem;
+    }
+    
   }
 
   &__image:hover &__descr {
     bottom: 0;
   }
-
+  
   &__descr {
     position: absolute;
     bottom: -100%;
@@ -38,86 +62,87 @@
     &:hover &__image--#{$i}:not(:hover) {
       transform: scale(0.95);
       background-image: url($image), radial-gradient($color-secondary, $color-secondary-light);
+      @include respond(tab-land) {
+        @if $i == 1 {
+          transform: scale(0.95) translateX(-105%);
+        }
+        @if $i == 2 {
+          transform: scale(0.95) translateX(-50%);
+        }
+        @if $i == 3 {
+          transform: scale(0.95) translateX(5%);
+        }
+      }
     }
 
     &__image--#{$i} {
       @if $i==1 {
-        top: 3.5rem;
+        top: 9.5rem;
         left: 10rem;
+        @include respond(img-break) {
+          top: 12rem;
+          left: 3rem;
+        }
+
+        @include respond(tab-land) {
+          top: -23rem;
+          left: 50%;
+          transform: translateX(-105%);
+        }
+        &:hover {
+          transform: scale(1.05) translateX(0);
+          z-index: 2;
+          @include respond(tab-land) {
+            transform: scale(1.05) translateX(-105%);
+          }
+        }
       }
 
       @if $i==2 {
-        top: 20rem;
+        top: 26rem;
         left: 20rem;
         z-index: 1;
+        @include respond(img-break) {
+          top: 28.5rem;
+          left: 11rem;
+        }
+        @include respond(tab-land) {
+          top: -22rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &:hover {
+          transform: scale(1.05) translateX(0);
+          z-index: 2;
+          @include respond(tab-land) {
+            transform: scale(1.05) translateX(-50%);
+          }
+        }
       }
 
       @if $i==3 {
-        top: 9rem;
+        top: 15rem;
         left: 35rem;
+        @include respond(img-break) {
+          top: 17.5rem;
+          left: 24rem; 
+        }
+        @include respond(tab-land) {
+          top: -23rem;
+          left: 50%;
+          transform: translateX(5%);
+        }
+        &:hover {
+          transform: scale(1.05) translateX(0);
+          z-index: 2;
+          @include respond(tab-land) {
+            transform: scale(1.05) translateX(0);
+          }
+        }
       }
 
       background-image: url($image);
       background-size: contain;
     }
-  }
-
-  &__icon {
-    fill: currentColor;
-    width: 15%;
-    position: absolute;
-    z-index: 2;
-    top: -6rem;
-    color: rgba($color-primary-dark, 0.5);
-
-    &--right {
-      right: -1rem;
-    }
-
-    &--left {
-      left: -1rem;
-    }
-  }
-
-  &__terminal {
-    top: 48rem;
-    width: 100%;
-    position: absolute;
-    font-size: 1.5rem;
-    font-family: Aleo;
-    background-color: $color-secondary-light;
-    padding: 1rem;
-    border-radius: 1rem;
-    color: $color-primary-dark;
-
-    &__left {
-      display: inline;
-      font-weight: bold;
-      &::after {
-        display: inline;
-        font-weight: bold;
-        color: rgba($color-primary, 0.7);
-      }
-    }
-
-    &__right {
-      display: inline-block;
-    }
-
-    &__text {
-      display: block;
-    }
-  }
-
-  &__image--1:hover ~ &__terminal > &__terminal__left::after {
-    content: " csulb";
-  }
-
-  &__image--2:hover ~ &__terminal > &__terminal__left::after {
-    content: " los_angeles";
-  }
-
-  &__image--3:hover ~ &__terminal > &__terminal__left::after {
-    content: " mayan";
   }
 }
