@@ -64,13 +64,13 @@
       background-image: url($image), radial-gradient($color-secondary, $color-secondary-light);
       @include respond(tab-land) {
         @if $i == 1 {
-          transform: scale(0.95) translateX(-105%);
+          transform: scale(0.97) translateX(-105%);
         }
         @if $i == 2 {
-          transform: scale(0.95) translateX(-50%);
+          transform: scale(0.97) translateX(-50%);
         }
         @if $i == 3 {
-          transform: scale(0.95) translateX(5%);
+          transform: scale(0.97) translateX(5%);
         }
       }
     }
@@ -93,7 +93,7 @@
           transform: scale(1.05) translateX(0);
           z-index: 2;
           @include respond(tab-land) {
-            transform: scale(1.05) translateX(-105%);
+            transform: scale(1.03) translateX(-103%);
           }
         }
       }
@@ -115,7 +115,7 @@
           transform: scale(1.05) translateX(0);
           z-index: 2;
           @include respond(tab-land) {
-            transform: scale(1.05) translateX(-50%);
+            transform: scale(1.03) translateX(-50%);
           }
         }
       }
@@ -136,7 +136,7 @@
           transform: scale(1.05) translateX(0);
           z-index: 2;
           @include respond(tab-land) {
-            transform: scale(1.05) translateX(0);
+            transform: scale(1.03) translateX(5%);
           }
         }
       }

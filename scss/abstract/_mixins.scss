@@ -37,7 +37,7 @@
 }
 
 /*
-- phone +600px
+- phone +560
 - tab-port +900px
 - tab-land +1200px
 - img-break +1415px
@@ -45,7 +45,7 @@
 */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media (max-width: 37.5em) {
+    @media (max-width: 35em) {
       @content;
     }
   }
