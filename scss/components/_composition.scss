@@ -35,8 +35,8 @@
     }
 
     @include respond(phone) {
-      width: 27rem;
-      height: 18rem;
+      width: 21rem;
+      height: 14rem;
     }
     
   }
@@ -85,7 +85,7 @@
         }
 
         @include respond(tab-land) {
-          top: -23rem;
+          top: -28rem;
           left: 50%;
           transform: translateX(-105%);
         }
@@ -107,7 +107,7 @@
           left: 11rem;
         }
         @include respond(tab-land) {
-          top: -22rem;
+          top: -27rem;
           left: 50%;
           transform: translateX(-50%);
         }
@@ -128,7 +128,7 @@
           left: 24rem; 
         }
         @include respond(tab-land) {
-          top: -23rem;
+          top: -28rem;
           left: 50%;
           transform: translateX(5%);
         }
