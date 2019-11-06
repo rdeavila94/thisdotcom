@@ -8,9 +8,13 @@
   z-index: 1;
   font-family: $primary-font;
   left: 0;
-  transform: translate(-4vw, -50%) rotateZ(-25deg);
+  transform: translate(-1rem, -75%) rotateZ(-20deg);
   letter-spacing: 0.1rem;
   
+  @include respond(tab-land) {
+    transform: translate(-2vw, -75%) rotateZ(-25deg);
+  }
+
   &--primary {
     background-image: linear-gradient(to top right, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.8));
     color: $color-white;
