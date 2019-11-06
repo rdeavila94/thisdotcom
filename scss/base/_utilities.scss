@@ -77,11 +77,11 @@
 }
 
 .u-animation-delay-md {
-  animation-delay: .75s;
+  animation-delay: 0.75s;
 }
 
 .u-animation-delay-sm {
-  animation-delay: .25s;
+  animation-delay: 0.25s;
 }
 
 .u-text-center {
@@ -106,5 +106,11 @@
   &--sm {
     height: 1.5rem;
     width: 1.5rem;
+  }
+}
+
+.u-centerize-portrait {
+  @include respond(tab-port) {
+    text-align: center;
   }
 }

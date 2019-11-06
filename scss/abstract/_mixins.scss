@@ -10,6 +10,10 @@
   font-family: $primary-font;
   font-size: 7.1rem;
   letter-spacing: 0.3rem;
+
+  @include respond(tight) {
+    font-size: 5.7rem;
+  }
 }
 
 @mixin font-header-secondary {
