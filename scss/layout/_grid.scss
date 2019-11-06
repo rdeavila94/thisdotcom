@@ -2,6 +2,10 @@
   max-width: $row-width;
   margin: 0 auto;
 
+  @include respond(tab-land) {
+    max-width: 95vw;
+  }
+
   @include clearfix;
 
   &:not(:last-of-type) {
@@ -12,12 +16,19 @@
     float: left;
     &:not(:last-of-type) {
       margin-right: $gutter-horizontal;
+      @include respond(tab-port) {
+        margin-right: 0;
+      }
     }
   }
 
   @for $i from 1 through 12 {
     .col-#{$i} {
       width: grid-size(#{$i});
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
     }
   }
 }
