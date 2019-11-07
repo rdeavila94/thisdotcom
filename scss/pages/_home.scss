@@ -43,6 +43,10 @@
     height: 10rem;
     float: right;
     background-color: $color-black;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__ribbon-text {
@@ -54,6 +58,9 @@
     color: $color-white;
     letter-spacing: 0.2rem;
     background-color: transparent;
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 }
 
