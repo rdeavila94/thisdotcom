@@ -50,13 +50,13 @@
     background-size: cover;
     background-position: center;
 
-    &--1 {
-      background-image: url('../img/identicon.png');
+    @for $i from 1 through length($card-images) {
+      $image: nth($card-images, $i );
+      &--#{$i} {
+        background-image: url(#{$image});
+      }
     }
 
-    &--2 {
-      background-image: url('../img/this.png');
-    }
   }
 
   &__lower {

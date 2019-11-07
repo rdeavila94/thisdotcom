@@ -61,8 +61,8 @@
     @include font-xs;
   }
 
-  @for $i from 1 through length($images) {
-    $image: nth($images, $i);
+  @for $i from 1 through length($composition-images) {
+    $image: nth($composition-images, $i);
 
     &:hover &__image--#{$i}:not(:hover) {
       transform: scale(0.95);
