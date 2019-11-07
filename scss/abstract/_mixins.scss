@@ -26,6 +26,12 @@
   letter-spacing: 0.2rem;
 }
 
+@mixin font-lg {
+  font-family: $primary-font;
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+}
+
 @mixin font-md {
   font-family: $primary-font;
   font-size: 2.2rem;
@@ -59,9 +65,8 @@
 - desktop-lg 1661+px
 */
 @mixin respond($breakpoint) {
-
   @if $breakpoint == tight {
-    @media (max-width:28.75em) {
+    @media (max-width: 28.75em) {
       @content;
     }
   }

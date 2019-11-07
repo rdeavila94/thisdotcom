@@ -3,6 +3,14 @@
   width: 40rem;
   perspective: 150rem;
   position: relative;
+  @include respond(tab-port) {
+    width: 60rem;
+    height: 70rem;
+  }
+
+  @include respond(phone) {
+    width: 90vw;
+  }
 
   &__front,
   &__back {
@@ -34,10 +42,21 @@
   }
 
   &__upper {
-    max-height: 40%;
+    height: 40%;
     width: 100%;
     text-align: center;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--1 {
+      background-image: url('../img/identicon.png');
+    }
+
+    &--2 {
+      background-image: url('../img/this.png');
+    }
   }
 
   &__lower {
@@ -61,6 +80,9 @@
     text-align: center;
     font-size: 4rem;
     margin: 1rem 0rem;
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
 
     &--left-primary {
       background-image: linear-gradient(135deg, $color-white 0%, $color-white 50%, $color-primary 50%);
@@ -113,11 +135,18 @@
 
   &__descr {
     @include font-md;
+    @include respond(tab-port) {
+      @include font-lg;
+    }
     line-height: 125%;
     display: inline-block;
     padding: 0.5rem 0.3rem;
     text-align: center;
     font-weight: bold;
+
+    @include respond(tab-port) {
+      padding: 1rem;
+    }
   }
 
   &__footer {
@@ -125,6 +154,10 @@
     bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 3rem;
+    @include respond(tab-port) {
+      font-size: 4.5rem;
+    }
   }
 
   &__paragraph {
@@ -133,5 +166,9 @@
     line-height: 150%;
     padding: 0.5rem;
     @include font-sm;
+    @include respond(tab-port) {
+      @include font-md;
+      padding: 1.5rem;
+    }
   }
 }
