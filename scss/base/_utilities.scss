@@ -114,3 +114,15 @@
     text-align: center;
   }
 }
+
+.u-relativize {
+  position: relative;
+}
+
+.u-display-on-port {
+  display: none;
+
+  @include respond(tab-port) {
+    display: inherit;
+  }
+}

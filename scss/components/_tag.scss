@@ -7,16 +7,30 @@
   box-shadow: 0rem 0rem 3rem rgba($color-black, 0.5);
   z-index: 1;
   font-family: $primary-font;
-  left: 0;
-  transform: translate(-1rem, -75%) rotateZ(-20deg);
   letter-spacing: 0.1rem;
-  
-  @include respond(tab-land) {
-    transform: translate(0, -75%) rotateZ(-15deg);
+  color: $color-white;
+
+  &--left {
+    left: 0;
+    transform: translate(-1rem, -75%) rotateZ(-20deg);
+    @include respond(tab-land) {
+      transform: translate(0, -75%) rotateZ(-15deg);
+    }
+  }
+
+  &--right {
+    right: 0;
+    transform: translate(1rem, -75%) rotateZ(20deg);
+    @include respond(tab-land) {
+      transform: translate(0, -75%) rotateZ(20deg);
+    }
   }
 
   &--primary {
     background-image: linear-gradient(to top right, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.8));
-    color: $color-white;
+  }
+
+  &--secondary {
+    background-image: linear-gradient(to bottom right, rgba($color-secondary-dark, 0.8), rgba($color-black, 0.8));
   }
 }
