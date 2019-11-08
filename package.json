@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "node-sass scss/styles.scss css/styles.css -w",
+    "watch:js": "babel js/app.js -w -o lib/app.js",
     "devserver": "live-server",
-    "start-dev": "npm-run-all --parallel watch:sass devserver",
-
+    "start-dev": "npm-run-all --parallel watch:sass watch:js devserver",
     "compile:sass": "node-sass scss/styles.scss css/style.comp.css",
     "concat:css": "concat -o css/style.concat.css css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css",
@@ -18,6 +18,9 @@
   "author": "Richard De Avila",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "autoprefixer": "^9.6.4",
     "concat": "^1.0.3",
     "node-sass": "^4.12.0",

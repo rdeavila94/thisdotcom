@@ -22,7 +22,7 @@ let poststampTriggered = false
 let cardTriggered = false
 
 const greeting = new AnimatedElement(document.querySelector('#greeting'), 'come-in-left', 'u-hidden')
-const name = new AnimatedElement(document.querySelector('#name'), 'flip-in', 'u-hidden')
+const richard = new AnimatedElement(document.querySelector('#name'), 'flip-in', 'u-hidden')
 const uLine = new AnimatedElement(document.querySelector('#header-line'), 'u-line--animated', 'u-hidden')
 const bioCol = new AnimatedElement(document.querySelector('#bio-col'), 'col-fade-in-left', 'u-hidden')
 const compCol = new AnimatedElement(document.querySelector('#comp-col'), 'col-fade-in-right', 'u-hidden')
@@ -49,7 +49,7 @@ const onscroll = e => {
   if (!greetingTriggered && greeting.element.getBoundingClientRect().top < windowHeight) {
     greetingTriggered = true
     greeting.animate()
-    name.animate()
+    richard.animate()
     uLine.animate()
   }
 
