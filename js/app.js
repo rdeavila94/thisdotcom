@@ -106,6 +106,12 @@ window.addEventListener('resize', () => {
   windowHeight = window.innerHeight
 }, false)
 
-window.onload = () => {
-  document.querySelector('body').style.display = 'unset'
+const isReady = () => {
+  if (document.readyState === 'complete') {
+    document.querySelector('body').style.display = 'unset'
+  } else {
+    setTimeout(isReady, 100)
+  }
 }
+
+isReady()

@@ -10,14 +10,13 @@
     position: absolute;
     perspective: 150rem;
     backface-visibility: hidden;
-    animation: 0.8s linear 0.3s backwards;
 
     @include respond(phone) {
-      font-size: $header-font-size * .9rem;
+      font-size: $header-font-size * 0.9rem;
     }
 
     @include respond(tight) {
-      font-size: $header-font-size * .8rem;
+      font-size: $header-font-size * 0.8rem;
     }
 
     &--left {
@@ -26,14 +25,13 @@
       background-color: $color-white;
       right: 50%;
       transform-origin: 100% 50%;
-      transform: translateY(-100%);
-      animation-name: rotate-in-from-right;
+      transform: translate(0, -100%);
+      animation: rotate-in-from-right 0.8s linear 0.3s backwards;
 
       @include respond(title-break) {
+        transform-origin: initial;
         transform: translate(50%, -100%);
-        animation-name: fall-down-top;
-        animation-delay: 0.5s;
-        animation-duration: 0.5s;
+        animation: fall-down-top 0.5s linear backwards 0.6s;
       }
     }
 
@@ -42,15 +40,15 @@
       color: $color-white;
       background-color: $color-primary;
       //THis is a fix because there is a 1px gap, sometimes, between the element and the true middle of the view
-      left: calc(50% - 1px);
+      left: 49.5%;
       transform-origin: 0% 50%;
-      animation-name: rotate-in-from-left;
+      animation: rotate-in-from-left 0.8s linear 0.3s backwards;
 
       @include respond(title-break) {
-        transform: translateX(-50%);
-        animation-name: fall-down-bottom;
-        animation-delay: 0s;
-        animation-duration: 0.5s;
+        transform-origin: initial;
+        left: 49.5%;
+        transform: translate(-50%, 0);
+        animation: fall-down-bottom 0.5s linear backwards 0.1s;
       }
     }
   }
