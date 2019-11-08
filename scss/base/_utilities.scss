@@ -119,6 +119,10 @@
   position: relative;
 }
 
+.u-text-shadow {
+  text-shadow: 0 0 1rem rgba($color-black, .8);
+}
+
 .u-display-on-port {
   display: none;
 
