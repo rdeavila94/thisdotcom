@@ -13,6 +13,7 @@
     visibility: hidden;
     z-index: 100;
     opacity: 0;
+    backdrop-filter: blur(5px);
     transition: all 0.5s;
   }
 
@@ -32,6 +33,7 @@
     transform: translate(100%, -50%);
     width: 100rem;
     height: 45rem;
+    max-height: 95vh;
     background-color: $color-secondary-light;
     border-radius: 1rem;
     box-shadow: 0 0 3rem rgba($color-black, 0.8);
