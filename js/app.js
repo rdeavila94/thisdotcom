@@ -105,3 +105,7 @@ document.addEventListener('scroll', onscroll)
 window.addEventListener('resize', () => {
   windowHeight = window.innerHeight
 }, false)
+
+window.onload = () => {
+  document.querySelector('body').style.display = 'unset'
+}
