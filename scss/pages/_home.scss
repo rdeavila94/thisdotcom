@@ -17,6 +17,10 @@
   @include respond(tab-land) {
     padding: 10rem 0rem 5rem 0rem;
   }
+
+  @include respond(phone) {
+    padding: 10rem 0rem 2rem 0rem;
+  }
 }
 
 .section-technical {
@@ -32,6 +36,10 @@
 
     @include respond(tab-land) {
       padding: 10rem 0rem 5rem 0rem;
+    }
+
+    @include respond(phone) {
+      padding: 5rem 0rem 5rem 0rem;
     }
   }
 
