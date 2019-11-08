@@ -43,15 +43,6 @@ const poststamp = new AnimatedElement(document.querySelector('#poststamp'), 'pos
 const card1 = new AnimatedElement(document.querySelector('#col-card-1'), 'col-fade-in-left', 'u-hidden')
 const card2 = new AnimatedElement(document.querySelector('#col-card-2'), 'col-fade-in-right', 'u-hidden')
 
-// Function to create a 'typing' animation
-const writeText = (message, writeSpeed = 100, element = typeAnimate) => {
-  for (let i = 0; i < message.length; i++) {
-    setTimeout(() => {
-      element.textContent += message.charAt(i)
-    }, writeSpeed * i)
-  }
-}
-
 // We have to use a named function in order to have the ability to remove the handler
 const onscroll = e => {
   if (!greetingTriggered && greeting.element.getBoundingClientRect().top < windowHeight) {
