@@ -10,6 +10,9 @@
 
   @include respond(phone) {
     width: 90vw;
+  }
+
+  @include respond(tight) {
     height: 60rem;
   }
 
