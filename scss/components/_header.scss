@@ -40,7 +40,7 @@
       color: $color-white;
       background-color: $color-primary;
       //THis is a fix because there is a 1px gap, sometimes, between the element and the true middle of the view
-      left: 49.5%;
+      left: calc(50% - 1px);
       transform-origin: 0% 50%;
       animation: rotate-in-from-left 0.8s linear 0.3s backwards;
 
