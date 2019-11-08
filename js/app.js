@@ -4,6 +4,14 @@ function AnimatedElement(element, animationClass, replacingClass = undefined) {
   this.replacingClass = replacingClass
 }
 
+// For older browsers that don't yet support replace
+if (!DOMTokenList.prototype.replace) {
+  DOMTokenList.prototype.replace = function (oldClass, newClass) {
+    this.remove(oldClass)
+    this.add(newClass)
+  }
+}
+
 AnimatedElement.prototype.animate = function () {
   this.replacingClass ? this.element.classList.replace(this.replacingClass, this.animationClass) : this.element.classList.add(this.animationClass)
 }
