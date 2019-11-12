@@ -96,7 +96,7 @@
   &__emphasize {
     color: $color-primary;
     font-weight: bold;
-    @include font-md;
+    @include font-big;
     text-shadow: 0 0 0.5rem rgba($color-black, 0.5);
     transition: all 0.5s;
     display: inline;
