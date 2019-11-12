@@ -1,6 +1,6 @@
 .poststamp {
   width: 100%;
-  height: 45rem;
+  height: 100%;
   background-color: $color-white;
   margin: 0 auto;
   box-shadow: 0 0 1rem rgba($color-black, 0.8) inset, 0 0 0 rgba($color-black, 0.8);
@@ -41,7 +41,8 @@
   &__right {
     width: 34%;
     height: 100%;
-    float: right;
+    position: absolute;
+    right: 0;
     background-image: url("../img/code.png");
     filter: contrast(0.7);
     background-size: cover;
