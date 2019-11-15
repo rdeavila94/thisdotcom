@@ -180,5 +180,8 @@
       @include font-md;
       padding: 1.5rem;
     }
+    @include respond(phone) {
+      line-height: 125%;
+    }
   }
 }

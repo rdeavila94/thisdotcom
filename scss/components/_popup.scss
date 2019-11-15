@@ -113,5 +113,8 @@
     line-height: 150%;
     text-align: center;
     @include font-md;
+    @include respond(phone) {
+      line-height: 125%;
+    }
   }
 }

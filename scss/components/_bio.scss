@@ -8,6 +8,9 @@
     line-height: 175%;
     display: inline;
     color: $color-secondary-dark;
+    @include respond(phone) {
+      line-height: 150%;
+    }
   }
 
   &__img {
