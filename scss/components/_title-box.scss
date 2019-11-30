@@ -34,6 +34,9 @@
     clear: none;
     font-size: 6.5rem;
     @include font-header;
+    @include respond(tight) {
+      font-size: 5.5rem;
+    }
   }
 
   &

@@ -16,10 +16,11 @@
 
   @include respond(tab-land) {
     padding: 10rem 0rem 5rem 0rem;
+    min-height: auto;
   }
 
   @include respond(phone) {
-    padding: 5rem 0rem 2rem 0rem;
+    padding: 5rem 0rem 0rem 0rem;
   }
 }
 
@@ -28,6 +29,10 @@
   position: relative;
   min-height: 100vh;
   box-shadow: 0 0 1.5rem rgba($color-black, .5);
+
+  @include respond(tab-land) {
+    min-height: auto;
+  }
 
   &__content {
     background-color: transparent;
