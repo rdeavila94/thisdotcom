@@ -177,11 +177,14 @@
     padding: 0.5rem;
     @include font-sm;
     @include respond(tab-port) {
-      @include font-md;
+      @include font-big;
       padding: 1.5rem;
     }
     @include respond(phone) {
-      line-height: 125%;
+      @include font-big;
+    }
+    @include respond(tight) {
+      @include font-sm;
     }
   }
 }
