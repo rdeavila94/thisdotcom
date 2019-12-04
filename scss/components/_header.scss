@@ -23,7 +23,7 @@
       font-family: "BigJohn";
       color: $color-primary;
       background-color: $color-white;
-      right: 50%;
+      right: calc(50% - 1px);
       transform-origin: 100% 50%;
       transform: translate(0, -100%);
       animation: rotate-in-from-right 0.8s linear 0.3s backwards;
