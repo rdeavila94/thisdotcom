@@ -104,15 +104,4 @@
       line-height: 150%;
     }
   }
-
-  &__link {
-    text-decoration: none;
-    &:visited,
-    &:link {
-      color: #ccab15;
-    }
-    &:hover {
-      text-shadow: 0 0 1rem #ccab15;
-    }
-  }
 }
