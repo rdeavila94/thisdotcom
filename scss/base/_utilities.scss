@@ -48,7 +48,11 @@
   border-radius: 1rem;
 
   &--animated {
-    animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards;
+    animation: expand-right-no-clip-path 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards;
+
+    @supports (clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%)) {
+      animation: expand-right 0.5s cubic-bezier(0.6, 0.6, 0.67, 0.03) backwards;
+    }
   }
 }
 
@@ -120,7 +124,7 @@
 }
 
 .u-text-shadow {
-  text-shadow: 0 0 1rem rgba($color-black, .8);
+  text-shadow: 0 0 1rem rgba($color-black, 0.8);
 }
 
 .u-display-on-port {
